@@ -11,6 +11,8 @@ namespace DrawSimulator
         public List<string> ProhibitedAssociations { get; private set; }
 
         public Dictionary<int, List<string>> DrawnTeams { get; set; }
+        public List<string> DrawnAssociations { get; set; }
+
         public Dictionary<int, List<string>> DrawPots { get; set; }
 
         public Team(string name, string association, List<string> prohibitedteams, List<string> prohibitedassociations)
@@ -21,6 +23,7 @@ namespace DrawSimulator
             ProhibitedAssociations = prohibitedassociations;
             DrawnTeams = new Dictionary<int, List<string>>();
             DrawPots = new Dictionary<int, List<string>>();
+            DrawnAssociations = new List<string>();
         }
 
         public bool ValidateTeam(Team team, int pot, int maxteamsperpot)
@@ -43,7 +46,21 @@ namespace DrawSimulator
             if (DrawnTeams[pot].Contains(team.Name))
                 return false;
 
+            if(nrAssociationAppearances(team.Association) == 2)
+                return false;
+
             return true;
+        }
+
+        private int nrAssociationAppearances(string association)
+        {
+            int appearances = 0;
+            foreach (var a in DrawnAssociations)
+            {
+                if (a == association)
+                    appearances++;
+            }
+            return appearances;
         }
 
         public string DrawResultToString()

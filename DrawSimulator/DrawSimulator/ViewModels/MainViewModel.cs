@@ -19,7 +19,7 @@ public class MainViewModel : ViewModelBase
     private int currentPot = 1;
     public int CurrentPot { get => currentPot; set => this.RaiseAndSetIfChanged(ref currentPot, value); }
 
-    private int nrPots = 4;
+    private int nrPots;
     public int NrPots { get => nrPots; set { this.RaiseAndSetIfChanged(ref nrPots, value); UpdatePots(); } }
 
     private int nrTeamsPerPot = 1;
@@ -52,6 +52,10 @@ public class MainViewModel : ViewModelBase
     public string NewTeamProhibitedAssociations { get => newTeamProhibitedAssociations; set => this.RaiseAndSetIfChanged(ref newTeamProhibitedAssociations, value); }
 
 
+    private int nrAttempts;
+    public int NrAttempts { get => nrAttempts; set => this.RaiseAndSetIfChanged(ref nrAttempts, value); }
+
+
     private List<string> drawResults;
     public List<string> DrawResults { get => drawResults; set => this.RaiseAndSetIfChanged(ref drawResults, value); }
 
@@ -66,9 +70,22 @@ public class MainViewModel : ViewModelBase
     public MainViewModel()
     {
         drawManager = new DrawManager();
-        UpdatePots();
         DrawResults = new List<string>();
 
+        drawManager.ReadTeamsFromJson();
+        AvailableTeams = drawManager.AvailableTeams.Keys.ToList();
+        AvailableTeams.Sort();
+
+        drawManager.ReadPotsFromJson();
+        var pots = drawManager.Pots;
+
+        NrPots = drawManager.Pots.Count;
+        drawManager.Pots = pots;
+
+        if (NrPots == 0)
+            NrPots = 4;
+
+        TeamsInCurrentPot = drawManager.Pots[CurrentPot];
         currentPotAsString = "Pot " + CurrentPot.ToString();
 
         var nextPotCanExecute = this.WhenAnyValue(x => x.CurrentPot, (pot) => { return pot < NrPots && drawManager.Pots.ContainsKey(pot + 1); });
@@ -84,20 +101,18 @@ public class MainViewModel : ViewModelBase
         cmdAddSelectedTeamToPot = ReactiveCommand.Create(AddTeamToPot, availableTeamsCommandsCanExecute);
         cmdRemoveSelectedTeam = ReactiveCommand.Create(RemoveSelectedTeam, availableTeamsCommandsCanExecute);
         cmdRemoveTeamFromPot = ReactiveCommand.Create(RemoveTeamFromPot, removeTeamFromPotCanExecute);
-
-        drawManager.ReadTeamsFromJson();
-        AvailableTeams = drawManager.AvailableTeams.Keys.ToList();
-        AvailableTeams.Sort();
-
-        drawManager.ReadPotsFromJson();
-        TeamsInCurrentPot = drawManager.Pots[CurrentPot];
     }
 
-    private void RunDraw()
+    private async void RunDraw()
     {
         var res = new List<string>();
+        int counter = 0;
         while (res.Count == 0)
-            res = drawManager.RunDraw(AllowFromOwnPot, NrTeamsPerPot);
+        {
+            counter++;
+            NrAttempts = counter;
+            res = await drawManager.RunDraw(AllowFromOwnPot, NrTeamsPerPot);
+        }
         DrawResults = res;
     }
 

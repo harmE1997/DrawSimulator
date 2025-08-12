@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace DrawSimulator
 {
@@ -10,7 +11,7 @@ namespace DrawSimulator
     {
         private const string teamsSaveFile = "AvailableTeams.json";
         private const string potsSaveFile = "Pots.json";
-        public Dictionary<int, List<string>> Pots { get; private set; }
+        public Dictionary<int, List<string>> Pots { get; set; }
         public Dictionary<string, Team> AvailableTeams { get; private set; }
 
         private Dictionary<string, Team> TeamsInDraw;
@@ -20,12 +21,13 @@ namespace DrawSimulator
             AvailableTeams = new Dictionary<string, Team>();
         }
 
-        public List<string> RunDraw(bool allowfromownpot, int nrteamsperpot)
+        public async Task<List<string>> RunDraw(bool allowfromownpot, int nrteamsperpot)
         {
             //remove the last draw
             foreach (var team in AvailableTeams)
             {
                 team.Value.DrawnTeams.Clear();
+                team.Value.DrawnAssociations.Clear();
                 for (int x = 1; x < Pots.Count + 1; x++)
                     team.Value.DrawnTeams.Add(x, new List<string>());
             }
@@ -58,6 +60,7 @@ namespace DrawSimulator
                                 {
                                     deadlock = true;
                                     return new List<string>();
+                                    //continue;
                                 }
                                 var teamindex = rand.Next(0, drawpot.Count);
                                 var drawnteam = drawpot[teamindex];
@@ -210,12 +213,14 @@ namespace DrawSimulator
                 TeamsInDraw[team].DrawnTeams[drawpotkey].Add(drawnteam);
             else
                 TeamsInDraw[team].DrawnTeams.Add(drawpotkey, new List<string> { drawnteam });
+            TeamsInDraw[team].DrawnAssociations.Add(TeamsInDraw[drawnteam].Association);
 
             //add cuttent team to drawn team
             if (TeamsInDraw[drawnteam].DrawnTeams.ContainsKey(currentpotkey))
                 TeamsInDraw[drawnteam].DrawnTeams[currentpotkey].Add(team);
             else
                 TeamsInDraw[drawnteam].DrawnTeams.Add(currentpotkey, new List<string> { team });
+            TeamsInDraw[drawnteam].DrawnAssociations.Add(TeamsInDraw[team].Association);
 
             SetDrawPots(nrteamsperpot);
         }

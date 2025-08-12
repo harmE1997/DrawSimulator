@@ -14,14 +14,16 @@
 
 	<Grid RowDefinitions="auto,auto" ColumnDefinitions="auto,auto,auto,auto" HorizontalAlignment="Center" VerticalAlignment="Center">
 		<Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0">
-			<Grid ColumnDefinitions="150,auto" RowDefinitions="auto,auto,auto,auto" Margin="5">
+			<Grid ColumnDefinitions="150,auto" RowDefinitions="auto,auto,auto,auto,auto" Margin="5">
 				<TextBlock Text="Number of pots" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="5"/>
 				<NumericUpDown Grid.Column="0" Grid.Row="0" Width="150" Height="50" Value="{Binding NrPots}" Minimum="2" FontSize="20" VerticalContentAlignment="Center"/>
 				<TextBlock Text="Number of allocated teams per pot" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="5"/>
 				<NumericUpDown Grid.Column="0" Grid.Row="1" Width="150" Height="50" Value="{Binding NrTeamsPerPot}" Minimum="1" FontSize="20" VerticalContentAlignment="Center"/>
 				<CheckBox Grid.ColumnSpan="2" Grid.Row="2" Content="Allow teams from own pot" IsChecked="{Binding AllowFromOwnPot}"/>
 				<Button Grid.Row="3" Grid.ColumnSpan="2" Width="250" Height="75" Command="{Binding cmdRunDraw}" Content="Run Draw" FontSize="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-			</Grid>
+				<TextBlock Text="Number of attempts: " Grid.Column="0" Grid.Row="4"/>
+        <TextBlock Text="{Binding NrAttempts}" Grid.Column="1" Grid.Row="4"/>
+      </Grid>
 		</Border>
 		<Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="0">
 		<Grid Name="PotViewer" Margin="5" RowDefinitions="auto,auto,auto,auto" ColumnDefinitions="auto,auto">
@@ -56,7 +58,7 @@
 		</Border>
 		<Border BorderBrush="Black" BorderThickness="1" Grid.Column="3" Grid.RowSpan="2">
 			<Grid Name="ResultViewer" RowDefinitions="auto,auto">
-				<TextBlock Text="Resutls" Grid.Row="0" Margin="5"/>
+				<TextBlock Text="Results" Grid.Row="0" Margin="5"/>
 				<ListBox ItemsSource="{Binding DrawResults}" Width="350" Height="710" Grid.Row="1" Margin="5"/>
 			</Grid>
 		</Border>
