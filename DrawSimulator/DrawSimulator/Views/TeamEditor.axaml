@@ -1,0 +1,46 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1100" d:DesignHeight="760"
+             x:Class="DrawSimulator.Views.TeamEditor">
+	<UserControl.Styles>
+		<StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
+	</UserControl.Styles>
+	<Grid ColumnDefinitions="auto,auto" RowDefinitions="*,*" HorizontalAlignment="Center" Margin="5">
+		<Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0">
+			<Grid Name="TeamsConfigurator" Margin="5" RowDefinitions="auto,auto,auto,auto,auto" ColumnDefinitions="auto,*">
+				<TextBlock Text="Name" Grid.Row="0" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+				<TextBox Text="{Binding NewTeamName}" Grid.Row="0" Grid.Column="1" Margin="5"/>
+				<TextBlock Text="Association" Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+				<ComboBox SelectedItem="{Binding NewTeamAssociation}" ItemsSource="{Binding AvailableAssociations}" Grid.Row="1" Grid.Column="1" Margin="5" Width="525"/>
+				<TextBlock Text="Prohibited Teams" Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+				<TextBox Text="{Binding NewTeamProhibitedTeams}" Grid.Row="2" Grid.Column="1" Margin="5"/>
+				<TextBlock Text="Prohibited Associations" Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+				<TextBox Text="{Binding NewTeamProhibitedAsssociations}" Grid.Row="3" Grid.Column="1" Margin="5"/>
+				<Button Grid.Row="4" Grid.ColumnSpan="2" Width="700" Height="40" Command="{Binding cmdAddTeam}" Content="Add Team" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+			</Grid>
+		</Border>
+
+		<Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="1">
+			<Grid Name="AssociationsConfigurator" Margin="5" RowDefinitions="auto,auto,auto,auto,auto" ColumnDefinitions="auto,auto">
+				<StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+				<TextBlock Text="Name" Grid.Row="0" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+				<TextBox Text="{Binding NewAssociation}" Grid.Row="0" Grid.Column="1" Margin="5" Width="640"/>
+				</StackPanel>
+				<Button Grid.Row="1" Grid.Column="0" Width="350" Height="40" Command="{Binding cmdAddAssociation}" Content="Add Association" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+				<Button Grid.Row="1" Grid.Column="1" Width="350" Height="40" Command="{Binding cmdRemoveAssociation}" Content="Remove Association" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+				<TextBlock Text="Available Associations" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+				<ListBox Grid.Row="3" Grid.ColumnSpan="2" Width="675" Height="320" Margin="5" ItemsSource="{Binding AvailableAssociations}" SelectedItem="{Binding SelectedAssociation}"/>
+			</Grid>
+		</Border>
+		
+		<Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.RowSpan="2">
+			<Grid Name="TeamsViewer" Margin="5" RowDefinitions="auto,auto,auto,auto">
+				<TextBlock Text="Available Teams" Grid.Row="0"/>
+				<DataGrid Width="350" Height="800" Grid.Row="1" Margin="5" ItemsSource="{Binding AvailableTeams}" SelectedItem="{Binding SelectedAvailableTeam}" AutoGenerateColumns="True" />
+				<Button Grid.Row="2" Width="350" Height="40" Command="{Binding cmdRemoveSelectedTeam}" Content="Remove Selected Team" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>

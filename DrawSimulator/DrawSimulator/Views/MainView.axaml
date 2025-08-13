@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:DrawSimulator.ViewModels"
+			 xmlns:views="clr-namespace:DrawSimulator.Views"
              mc:Ignorable="d" d:DesignWidth="1480" d:DesignHeight="810"
              x:Class="DrawSimulator.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -11,60 +12,77 @@
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:MainViewModel />
   </Design.DataContext>
-
 	<UserControl.Styles>
+		<Style Selector="TabItem">
+			<Setter Property="Width" Value="150"/>
+			<Setter Property="Height" Value="90"/>
+			<Setter Property="Background" Value="LightBlue"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="FontSize" Value="20"/>
+		</Style>
+		<Style Selector="PathIcon">
+			<Setter Property="Foreground" Value="Goldenrod"/>
+			<Setter Property="Height" Value="35"/>
+			<Setter Property="Width" Value="50"/>
+		</Style>
+
 		<StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
 	</UserControl.Styles>
-	<Grid RowDefinitions="auto,auto" ColumnDefinitions="auto,auto,auto,auto" HorizontalAlignment="Center" VerticalAlignment="Center">
-		<Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0">
-			<Grid ColumnDefinitions="150,auto" RowDefinitions="auto,auto,auto,auto,auto,auto" Margin="5">
-				<TextBlock Text="Number of pots" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="5"/>
-				<NumericUpDown Grid.Column="0" Grid.Row="0" Width="150" Height="50" Value="{Binding NrPots}" Minimum="2" FontSize="20" VerticalContentAlignment="Center"/>
-				<TextBlock Text="Number of allocated teams per pot" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="5"/>
-				<NumericUpDown Grid.Column="0" Grid.Row="1" Width="150" Height="50" Value="{Binding NrTeamsPerPot}" Minimum="1" FontSize="20" VerticalContentAlignment="Center"/>
-				<CheckBox Grid.ColumnSpan="2" Grid.Row="2" Content="Allow teams from own pot" IsChecked="{Binding AllowFromOwnPot}"/>
-				<Button Grid.Row="3" Grid.ColumnSpan="2" Width="390" Height="75" Command="{Binding cmdRunDraw}" Content="Run Draw" FontSize="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-				<TextBlock Text="Performing the draw might take a few seconds " Grid.ColumnSpan="2" Grid.Row="4" HorizontalAlignment="Center" FontWeight="Bold"/>
-				<TextBlock Text="Number of attempts: " Grid.Column="0" Grid.Row="5" Margin="5"/>
-				<TextBlock Text="{Binding NrAttempts}" Grid.Column="1" Grid.Row="5" Margin="5"/>
-      </Grid>
-		</Border>
-		<Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="0">
-		<Grid Name="PotViewer" Margin="5" RowDefinitions="auto,auto,auto,auto" ColumnDefinitions="auto,auto">
-			<ListBox Width="300" Height="400" Grid.Row="1" Grid.ColumnSpan="2" Margin="5" ItemsSource="{Binding TeamsInCurrentPot}" SelectedItem="{Binding SelectedPotTeam}" />
-			<TextBlock Text="{Binding CurrentPotAsString}" Grid.Row="0"/>
-			<Button Grid.Row="2" Grid.Column="1" Width="150" Height="40" Command="{Binding cmdShowNextPot}" Content="Next Pot" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
-			<Button Grid.Row="2" Grid.Column="0" Width="150" Height="40" Command="{Binding cmdShowPreviousPot}" Content="Previous Pot" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
-			<Button Grid.Row="3" Grid.ColumnSpan="2" Width="300" Height="40" Margin="5" Command="{Binding cmdRemoveTeamFromPot}" Content="Remove selected team" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
-		</Grid>
-		</Border>
-
-		<Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Grid.RowSpan="2">
-			<Grid Name="TeamsViewer" Margin="5" RowDefinitions="auto,auto,auto,auto">
-				<TextBlock Text="Available Teams" Grid.Row="0"/>
-				<DataGrid Width="350" Height="630" Grid.Row="1" Margin="5" ItemsSource="{Binding AvailableTeams}" SelectedItem="{Binding SelectedAvailableTeam}" AutoGenerateColumns="True" />
-				<Button Grid.Row="2" Width="350" Height="40" Command="{Binding cmdAddSelectedTeamToPot}" Content="Add selected team to current pot" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
-				<Button Grid.Row="3" Width="350" Height="40" Command="{Binding cmdRemoveSelectedTeam}" Content="Remove Selected Team" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+	<TabControl TabStripPlacement="Left">
+		<TabItem Content="Home">
+			<TabItem.Header>
+				<StackPanel Orientation="Vertical">
+					<!--<PathIcon Data=""/>-->
+					<TextBlock Text="Home"/>
+				</StackPanel>
+			</TabItem.Header>
+			<Grid RowDefinitions="auto,auto" ColumnDefinitions="auto,auto,auto,auto" VerticalAlignment="Center">
+				<Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0">
+					<Grid ColumnDefinitions="150,auto" RowDefinitions="auto,auto,auto,auto,auto,auto" Margin="5">
+						<TextBlock Text="Number of pots" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="5"/>
+						<NumericUpDown Grid.Column="0" Grid.Row="0" Width="150" Height="50" Value="{Binding NrPots}" Minimum="2" FontSize="20" VerticalContentAlignment="Center"/>
+						<TextBlock Text="Number of allocated teams per pot" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="5"/>
+						<NumericUpDown Grid.Column="0" Grid.Row="1" Width="150" Height="50" Value="{Binding NrTeamsPerPot}" Minimum="1" FontSize="20" VerticalContentAlignment="Center"/>
+						<CheckBox Grid.ColumnSpan="2" Grid.Row="2" Content="Allow teams from own pot" IsChecked="{Binding AllowFromOwnPot}"/>
+						<Button Grid.Row="3" Grid.ColumnSpan="2" Width="390" Height="75" Command="{Binding cmdRunDraw}" Content="Run Draw" FontSize="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+						<TextBlock Text="Performing the draw might take a few seconds " Grid.ColumnSpan="2" Grid.Row="4" HorizontalAlignment="Center" FontWeight="Bold"/>
+						<TextBlock Text="Number of attempts: " Grid.Column="0" Grid.Row="5" Margin="5"/>
+						<TextBlock Text="{Binding NrAttempts}" Grid.Column="1" Grid.Row="5" Margin="5"/>
+			  </Grid>
+				</Border>
+				<Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="1">
+				<Grid Name="PotViewer" Margin="5" RowDefinitions="auto,auto,auto,auto" ColumnDefinitions="auto,auto">
+					<ListBox Width="380" Height="400" Grid.Row="1" Grid.ColumnSpan="2" Margin="5" ItemsSource="{Binding TeamsInCurrentPot}" SelectedItem="{Binding SelectedPotTeam}" />
+					<TextBlock Text="{Binding CurrentPotAsString}" Grid.Row="0"/>
+					<Button Grid.Row="2" Grid.Column="1" Width="150" Height="40" Command="{Binding cmdShowNextPot}" Content="Next Pot" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+					<Button Grid.Row="2" Grid.Column="0" Width="150" Height="40" Command="{Binding cmdShowPreviousPot}" Content="Previous Pot" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+					<Button Grid.Row="3" Grid.ColumnSpan="2" Width="300" Height="40" Margin="5" Command="{Binding cmdRemoveTeamFromPot}" Content="Remove selected team" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+				</Grid>
+				</Border>
+				<Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Grid.RowSpan="2">
+					<Grid Name="TeamsViewer" Margin="5" RowDefinitions="auto,auto,auto,auto">
+						<TextBlock Text="Available Teams" Grid.Row="0"/>
+						<DataGrid Width="350" Height="710" Grid.Row="1" Margin="5" ItemsSource="{Binding AvailableTeams}" SelectedItem="{Binding SelectedAvailableTeam}" AutoGenerateColumns="True" />
+						<Button Grid.Row="2" Width="350" Height="40" Command="{Binding cmdAddSelectedTeamToPot}" Content="Add selected team to current pot" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+					</Grid>
+				</Border>
+				<Border BorderBrush="Black" BorderThickness="1" Grid.Column="3" Grid.RowSpan="2">
+					<Grid Name="ResultViewer" RowDefinitions="auto,auto">
+						<TextBlock Text="Results" Grid.Row="0" Margin="5"/>
+						<ListBox ItemsSource="{Binding DrawResults}" Width="350" Height="750" Grid.Row="1" Margin="5"/>
+					</Grid>
+				</Border>
 			</Grid>
-		</Border>
-		<Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" Grid.Row="1">
-			<Grid Name="TeamsConfigurator" Margin="5" RowDefinitions="auto,auto,auto,auto,auto" ColumnDefinitions="auto,*">
-				<TextBlock Text="Name" Grid.Row="0" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
-				<TextBox Text="{Binding NewTeamName}" Grid.Row="0" Grid.Column="1" Margin="5"/>
-				<TextBlock Text="Association" Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
-				<TextBox Text="{Binding NewTeamAssociation}" Grid.Row="1" Grid.Column="1" Margin="5"/>
-				<TextBlock Text="Prohibited Teams" Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
-				<TextBox Text="{Binding NewTeamProhibitedTeams}" Grid.Row="2" Grid.Column="1" Margin="5"/>
-				<TextBlock Text="Prohibited Associations" Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
-				<TextBox Text="{Binding NewTeamProhibitedAsssociations}" Grid.Row="3" Grid.Column="1" Margin="5"/>
-				<Button Grid.Row="4" Grid.ColumnSpan="2" Width="700" Height="40" Command="{Binding cmdAddTeam}" Content="Add Team" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
-			</Grid>
-		</Border>
-		<Border BorderBrush="Black" BorderThickness="1" Grid.Column="3" Grid.RowSpan="2">
-			<Grid Name="ResultViewer" RowDefinitions="auto,auto">
-				<TextBlock Text="Results" Grid.Row="0" Margin="5"/>
-				<ListBox ItemsSource="{Binding DrawResults}" Width="350" Height="710" Grid.Row="1" Margin="5"/>
-			</Grid>
-		</Border>
-		</Grid>
+		</TabItem>
+		<TabItem>
+			<TabItem.Header>
+				<StackPanel Orientation="Vertical">
+					<!--<PathIcon Data=""/>-->
+					<TextBlock Text="Team Editor"/>
+				</StackPanel>
+			</TabItem.Header>
+			<views:TeamEditor/>
+		</TabItem>
+	</TabControl>
 </UserControl>

@@ -9,8 +9,9 @@ namespace DrawSimulator
 {
     public class DrawManager
     {
-        private const string teamsSaveFile = "AvailableTeams.json";
-        private const string potsSaveFile = "Pots.json";
+        public static string TeamsSaveFile = "AvailableTeams.json";
+        public static string PotsSaveFile = "Pots.json";
+        public static string AssociationsSaveFile = "Associations.json";
 
         private int nrTeamsPerPot;
         public Dictionary<int, List<string>> Pots { get; set; }
@@ -80,6 +81,10 @@ namespace DrawSimulator
                     results.Add(TeamsInDraw[team].DrawResultToString());
                 }
             }
+
+            if (!VerifyDraw())
+                results = new List<string>();
+
             return results;
         }
 
@@ -98,15 +103,15 @@ namespace DrawSimulator
 
             var newteam = new Team(newteamname, newteamassociation, prohibitedteams, prohibitedassociations);
             AvailableTeams.Add(newteamname, newteam);
-            SaveTeamsToJson();
+            SaveToJson(AvailableTeams, TeamsSaveFile);
         }
 
         public void RemoveTeam(string team)
         {
             AvailableTeams.Remove(team);
             Pots[GetPot(team)].Remove(team);
-            SaveTeamsToJson();
-            SavePotsToJson();
+            SaveToJson(AvailableTeams, TeamsSaveFile);
+            SaveToJson(Pots, PotsSaveFile);
         }
 
         public void RefreshPots(int nrpots)
@@ -120,51 +125,25 @@ namespace DrawSimulator
 
         #region JSON Methods
 
-        public void ReadPotsFromJson()
+        public T ReadFromJson<T>(string filepath, T defaultvalue)
         {
-            if (!File.Exists(potsSaveFile))
+            if (!File.Exists(filepath))
             {
-                SavePotsToJson();
-                return;
+                SaveToJson<T>(defaultvalue, filepath);
+                return defaultvalue;
             }
 
-            string input = File.ReadAllText(potsSaveFile);
-            Pots = JsonSerializer.Deserialize<Dictionary<int, List<string>>>(input, new JsonSerializerOptions { WriteIndented = true });
-            if (Pots.Count == 0)
-                Pots.Add(1, new List<string>());
+            string input = File.ReadAllText(filepath);
+            var res = JsonSerializer.Deserialize<T>(input, new JsonSerializerOptions { WriteIndented = true });
+            return res;
         }
 
-        public void SavePotsToJson()
+        public void SaveToJson<T>(T data, string filepath)
         {
             try
             {
-                string output = JsonSerializer.Serialize(Pots, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(potsSaveFile, output);
-            }
-
-            catch { return; }
-        }
-
-        public void ReadTeamsFromJson()
-        {
-            if (!File.Exists(teamsSaveFile))
-            {
-                SaveTeamsToJson();
-                return;
-            }
-
-            string input = File.ReadAllText(teamsSaveFile);
-            var teams = JsonSerializer.Deserialize<List<Team>>(input, new JsonSerializerOptions { WriteIndented = true });
-            foreach (var t in teams)
-                AvailableTeams.Add(t.Name, t);
-        }
-
-        private void SaveTeamsToJson()
-        {
-            try
-            {
-                string output = JsonSerializer.Serialize(AvailableTeams.Values.ToList(), new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(teamsSaveFile, output);
+                string output = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(filepath, output);
             }
 
             catch { return; }
@@ -264,6 +243,20 @@ namespace DrawSimulator
                     return pot.Key;
             }
             return 0;
+        }
+
+        private bool VerifyDraw()
+        {
+            foreach (var team in TeamsInDraw)
+            {
+                foreach (var pot in team.Value.DrawnTeams)
+                {
+                    if (pot.Value.Count != nrTeamsPerPot)
+                        return false;
+                }
+            }
+
+            return true;
         }
 
         #endregion

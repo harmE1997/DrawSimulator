@@ -55,6 +55,14 @@ public class MainViewModel : ViewModelBase
     private string newTeamProhibitedAssociations;
     public string NewTeamProhibitedAssociations { get => newTeamProhibitedAssociations; set => this.RaiseAndSetIfChanged(ref newTeamProhibitedAssociations, value); }
 
+    private string newAssociation;
+    public string NewAssociation { get => newAssociation; set => this.RaiseAndSetIfChanged(ref newAssociation, value); }
+
+    private string selectedAssociation;
+    public string SelectedAssociation { get => selectedAssociation; set => this.RaiseAndSetIfChanged(ref selectedAssociation, value); }
+
+    private List<string> availableAssociations;
+    public List<string> AvailableAssociations { get => availableAssociations; set => this.RaiseAndSetIfChanged(ref availableAssociations, value); }
 
     private int nrAttempts;
     public int NrAttempts { get => nrAttempts; set => this.RaiseAndSetIfChanged(ref nrAttempts, value); }
@@ -70,17 +78,26 @@ public class MainViewModel : ViewModelBase
     public ReactiveCommand<Unit, Unit> cmdAddSelectedTeamToPot { get; }
     public ReactiveCommand<Unit, Unit> cmdRemoveSelectedTeam { get; }
     public ReactiveCommand<Unit, Unit> cmdRemoveTeamFromPot { get; }
+    public ReactiveCommand<Unit, Unit> cmdAddAssociation { get; }
+    public ReactiveCommand<Unit, Unit> cmdRemoveAssociation { get; }
 
     public MainViewModel()
     {
         drawManager = new DrawManager();
         DrawResults = new List<string>();
+        AvailableAssociations = new List<string>();
+        AvailableAssociations = drawManager.ReadFromJson(DrawManager.AssociationsSaveFile, new List<string>());
 
-        drawManager.ReadTeamsFromJson();
+        var teams = drawManager.ReadFromJson(DrawManager.TeamsSaveFile, new Dictionary<string, Team>());
+        foreach (var t in teams)
+            drawManager.AvailableTeams.Add(t.Value.Name, t.Value);
+
         SetAvailableTeams();
 
-        drawManager.ReadPotsFromJson();
-        var pots = drawManager.Pots;
+        var pots = drawManager.ReadFromJson(DrawManager.PotsSaveFile, new Dictionary<int, List<string>>() { { 1, new List<string>() } });
+        if (pots.Count == 0)
+            pots.Add(1, new List<string>());
+        drawManager.Pots = pots;
 
         NrPots = drawManager.Pots.Count;
         drawManager.Pots = pots;
@@ -96,6 +113,8 @@ public class MainViewModel : ViewModelBase
         var addTeamCanExecute = this.WhenAnyValue(x => x.NewTeamName, x => x.NewTeamAssociation, (a, b) => { return !string.IsNullOrEmpty(a) && !string.IsNullOrEmpty(b); });
         var availableTeamsCommandsCanExecute = this.WhenAny(x => x.SelectedAvailableTeam, (team) => { return team != null; });
         var removeTeamFromPotCanExecute = this.WhenAnyValue(x => x.SelectedPotTeam, (team) => { return !string.IsNullOrEmpty(team); });
+        var addAssociationCommandCanExecute = this.WhenAnyValue(x => x.NewAssociation, (association) => { return !string.IsNullOrEmpty(association); });
+        var removeAssociationCommandCanExecute = this.WhenAnyValue(x => x.SelectedAssociation, (association) => { return !string.IsNullOrEmpty(association); });
 
         cmdRunDraw = ReactiveCommand.Create(RunDraw);
         cmdShowNextPot = ReactiveCommand.Create(NextPot, nextPotCanExecute);
@@ -104,6 +123,8 @@ public class MainViewModel : ViewModelBase
         cmdAddSelectedTeamToPot = ReactiveCommand.Create(AddTeamToPot, availableTeamsCommandsCanExecute);
         cmdRemoveSelectedTeam = ReactiveCommand.Create(RemoveSelectedTeam, availableTeamsCommandsCanExecute);
         cmdRemoveTeamFromPot = ReactiveCommand.Create(RemoveTeamFromPot, removeTeamFromPotCanExecute);
+        cmdAddAssociation = ReactiveCommand.Create(AddAssociation, addAssociationCommandCanExecute);
+        cmdRemoveAssociation = ReactiveCommand.Create(RemoveAssociation, removeAssociationCommandCanExecute);
     }
 
     private async void RunDraw()
@@ -132,7 +153,7 @@ public class MainViewModel : ViewModelBase
         TeamsInCurrentPot = new();
         TeamsInCurrentPot = drawManager.Pots[CurrentPot];
         TeamsInCurrentPot.Sort();
-        drawManager.SavePotsToJson();
+        drawManager.SaveToJson(drawManager.Pots, DrawManager.PotsSaveFile);
     }
 
     private void RemoveTeamFromPot()
@@ -150,7 +171,7 @@ public class MainViewModel : ViewModelBase
             TeamsInCurrentPot = new();
         }
 
-        drawManager.SavePotsToJson();
+        drawManager.SaveToJson(drawManager.Pots, DrawManager.PotsSaveFile);
     }
 
     private void RemoveSelectedTeam()
@@ -175,6 +196,35 @@ public class MainViewModel : ViewModelBase
         CurrentPot--;
         CurrentPotAsString = "Pot " + CurrentPot.ToString();
         TeamsInCurrentPot = drawManager.Pots[CurrentPot];
+    }
+
+    private void AddAssociation()
+    {
+        var associations = AvailableAssociations;
+        associations.Add(NewAssociation);
+        associations.Sort();
+        AvailableAssociations = new();
+        AvailableAssociations = associations;
+        drawManager.SaveToJson(AvailableAssociations, DrawManager.AssociationsSaveFile);
+    }
+
+    private void RemoveAssociation()
+    {
+        if (AvailableAssociations.Count > 1)
+        {
+            var associations = AvailableAssociations;
+            associations.Remove(SelectedAssociation);
+            associations.Sort();
+            AvailableAssociations = new();
+            AvailableAssociations = associations;
+        }
+
+        else
+        {
+            AvailableAssociations = new();
+        }
+
+        drawManager.SaveToJson(AvailableAssociations, DrawManager.AssociationsSaveFile);
     }
 
     private void UpdatePots()
