@@ -78,6 +78,7 @@ public class MainViewModel : ViewModelBase
     public ReactiveCommand<Unit, Unit> cmdAddSelectedTeamToPot { get; }
     public ReactiveCommand<Unit, Unit> cmdRemoveSelectedTeam { get; }
     public ReactiveCommand<Unit, Unit> cmdRemoveTeamFromPot { get; }
+    public ReactiveCommand<Unit, Unit> cmdClearPot { get; }
     public ReactiveCommand<Unit, Unit> cmdAddAssociation { get; }
     public ReactiveCommand<Unit, Unit> cmdRemoveAssociation { get; }
 
@@ -113,6 +114,7 @@ public class MainViewModel : ViewModelBase
         var addTeamCanExecute = this.WhenAnyValue(x => x.NewTeamName, x => x.NewTeamAssociation, (a, b) => { return !string.IsNullOrEmpty(a) && !string.IsNullOrEmpty(b); });
         var availableTeamsCommandsCanExecute = this.WhenAny(x => x.SelectedAvailableTeam, (team) => { return team != null; });
         var removeTeamFromPotCanExecute = this.WhenAnyValue(x => x.SelectedPotTeam, (team) => { return !string.IsNullOrEmpty(team); });
+        var clearPotCommandCanExecute = this.WhenAnyValue(x => x.TeamsInCurrentPot, (teams) => { return teams.Count > 0; });
         var addAssociationCommandCanExecute = this.WhenAnyValue(x => x.NewAssociation, (association) => { return !string.IsNullOrEmpty(association); });
         var removeAssociationCommandCanExecute = this.WhenAnyValue(x => x.SelectedAssociation, (association) => { return !string.IsNullOrEmpty(association); });
 
@@ -123,6 +125,7 @@ public class MainViewModel : ViewModelBase
         cmdAddSelectedTeamToPot = ReactiveCommand.Create(AddTeamToPot, availableTeamsCommandsCanExecute);
         cmdRemoveSelectedTeam = ReactiveCommand.Create(RemoveSelectedTeam, availableTeamsCommandsCanExecute);
         cmdRemoveTeamFromPot = ReactiveCommand.Create(RemoveTeamFromPot, removeTeamFromPotCanExecute);
+        cmdClearPot = ReactiveCommand.Create(ClearPot, clearPotCommandCanExecute);
         cmdAddAssociation = ReactiveCommand.Create(AddAssociation, addAssociationCommandCanExecute);
         cmdRemoveAssociation = ReactiveCommand.Create(RemoveAssociation, removeAssociationCommandCanExecute);
     }
@@ -171,6 +174,13 @@ public class MainViewModel : ViewModelBase
             TeamsInCurrentPot = new();
         }
 
+        drawManager.SaveToJson(drawManager.Pots, DrawManager.PotsSaveFile);
+    }
+
+    private void ClearPot()
+    {
+        drawManager.Pots[CurrentPot] = new();
+        TeamsInCurrentPot = new();
         drawManager.SaveToJson(drawManager.Pots, DrawManager.PotsSaveFile);
     }
 
