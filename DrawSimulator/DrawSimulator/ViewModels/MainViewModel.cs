@@ -1,20 +1,24 @@
 ﻿using ReactiveUI;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reactive;
-using System.Reactive.Linq;
 
 namespace DrawSimulator.ViewModels;
+
+public class TeamField
+{
+    public string Team { get; set; }
+    public string Association { get; set; }
+}
 
 public class MainViewModel : ViewModelBase
 {
     private DrawManager drawManager;
 
-    private List<string> availableTeams;
-    public List<string> AvailableTeams { get => availableTeams; set => this.RaiseAndSetIfChanged(ref availableTeams, value); }
+    private List<TeamField> availableTeams;
+    public List<TeamField> AvailableTeams { get => availableTeams; set => this.RaiseAndSetIfChanged(ref availableTeams, value); }
 
-    private string selectedAvailableTeam;
-    public string SelectedAvailableTeam { get => selectedAvailableTeam; set => this.RaiseAndSetIfChanged(ref selectedAvailableTeam, value); }
+    private TeamField selectedAvailableTeam;
+    public TeamField SelectedAvailableTeam { get => selectedAvailableTeam; set => this.RaiseAndSetIfChanged(ref selectedAvailableTeam, value); }
 
     private int currentPot = 1;
     public int CurrentPot { get => currentPot; set => this.RaiseAndSetIfChanged(ref currentPot, value); }
@@ -73,8 +77,7 @@ public class MainViewModel : ViewModelBase
         DrawResults = new List<string>();
 
         drawManager.ReadTeamsFromJson();
-        AvailableTeams = drawManager.AvailableTeams.Keys.ToList();
-        AvailableTeams.Sort();
+        SetAvailableTeams();
 
         drawManager.ReadPotsFromJson();
         var pots = drawManager.Pots;
@@ -91,7 +94,7 @@ public class MainViewModel : ViewModelBase
         var nextPotCanExecute = this.WhenAnyValue(x => x.CurrentPot, (pot) => { return pot < NrPots && drawManager.Pots.ContainsKey(pot + 1); });
         var previousPotCanExecute = this.WhenAnyValue(x => x.CurrentPot, (pot) => { return pot > 1; });
         var addTeamCanExecute = this.WhenAnyValue(x => x.NewTeamName, x => x.NewTeamAssociation, (a, b) => { return !string.IsNullOrEmpty(a) && !string.IsNullOrEmpty(b); });
-        var availableTeamsCommandsCanExecute = this.WhenAnyValue(x => x.SelectedAvailableTeam, (team) => { return !string.IsNullOrEmpty(team); });
+        var availableTeamsCommandsCanExecute = this.WhenAny(x => x.SelectedAvailableTeam, (team) => { return team != null; });
         var removeTeamFromPotCanExecute = this.WhenAnyValue(x => x.SelectedPotTeam, (team) => { return !string.IsNullOrEmpty(team); });
 
         cmdRunDraw = ReactiveCommand.Create(RunDraw);
@@ -105,27 +108,27 @@ public class MainViewModel : ViewModelBase
 
     private async void RunDraw()
     {
-        var res = new List<string>();
         int counter = 0;
+        var res = new List<string>();
         while (res.Count == 0)
         {
             counter++;
             NrAttempts = counter;
             res = await drawManager.RunDraw(AllowFromOwnPot, NrTeamsPerPot);
         }
+
         DrawResults = res;
     }
 
     private void AddNewTeam()
     {
         drawManager.AddNewTeam(NewTeamName, NewTeamAssociation, NewTeamProhibitedTeams, NewTeamProhibitedAssociations);
-        AvailableTeams = drawManager.AvailableTeams.Keys.ToList();
-        AvailableTeams.Sort();
+        SetAvailableTeams();
     }
 
     private void AddTeamToPot()
     {
-        drawManager.Pots[CurrentPot].Add(SelectedAvailableTeam);
+        drawManager.Pots[CurrentPot].Add(SelectedAvailableTeam.Team);
         TeamsInCurrentPot = new();
         TeamsInCurrentPot = drawManager.Pots[CurrentPot];
         TeamsInCurrentPot.Sort();
@@ -152,12 +155,12 @@ public class MainViewModel : ViewModelBase
 
     private void RemoveSelectedTeam()
     {
-        if (TeamsInCurrentPot.Contains(SelectedAvailableTeam))
-        {
-            SelectedPotTeam = SelectedAvailableTeam;
+        if (TeamsInCurrentPot.Contains(SelectedAvailableTeam.Team))
             RemoveTeamFromPot();
-        }
-        AvailableTeams = drawManager.AvailableTeams.Keys.ToList();
+
+        SelectedPotTeam = SelectedAvailableTeam.Team;
+        drawManager.RemoveTeam(SelectedAvailableTeam.Team);
+        SetAvailableTeams();
     }
 
     private void NextPot()
@@ -179,5 +182,16 @@ public class MainViewModel : ViewModelBase
         CurrentPot = 1;
         drawManager.RefreshPots(NrPots);
         TeamsInCurrentPot = drawManager.Pots[CurrentPot];
+    }
+
+    private void SetAvailableTeams()
+    {
+        var teamfields = new List<TeamField>();
+        foreach (var team in drawManager.AvailableTeams)
+        {
+            teamfields.Add(new TeamField() { Team = team.Key, Association = team.Value.Association });
+        }
+
+        AvailableTeams = teamfields;
     }
 }

@@ -11,6 +11,8 @@ namespace DrawSimulator
     {
         private const string teamsSaveFile = "AvailableTeams.json";
         private const string potsSaveFile = "Pots.json";
+
+        private int nrTeamsPerPot;
         public Dictionary<int, List<string>> Pots { get; set; }
         public Dictionary<string, Team> AvailableTeams { get; private set; }
 
@@ -18,9 +20,11 @@ namespace DrawSimulator
 
         public DrawManager()
         {
+            Pots = new Dictionary<int, List<string>>();
             AvailableTeams = new Dictionary<string, Team>();
         }
 
+        #region Public Operators
         public async Task<List<string>> RunDraw(bool allowfromownpot, int nrteamsperpot)
         {
             //remove the last draw
@@ -35,7 +39,8 @@ namespace DrawSimulator
             Random rand = new Random();
             var results = new List<string>();
             TeamsInDraw = GetTeamsInDraw();
-            SetDrawPots(nrteamsperpot);
+            nrTeamsPerPot = nrteamsperpot;
+            SetDrawPots();
 
             foreach (var Pot in Pots)
             {
@@ -64,7 +69,8 @@ namespace DrawSimulator
                                 }
                                 var teamindex = rand.Next(0, drawpot.Count);
                                 var drawnteam = drawpot[teamindex];
-                                AllocateTeam(team, drawnteam, drawpotkey, Pot.Key, nrteamsperpot);
+                                AllocateTeam(team, drawnteam, drawpotkey, Pot.Key);
+                                SetDrawPots();
                             }
 
                             else
@@ -98,7 +104,9 @@ namespace DrawSimulator
         public void RemoveTeam(string team)
         {
             AvailableTeams.Remove(team);
+            Pots[GetPot(team)].Remove(team);
             SaveTeamsToJson();
+            SavePotsToJson();
         }
 
         public void RefreshPots(int nrpots)
@@ -108,7 +116,34 @@ namespace DrawSimulator
                 Pots.Add(i, new List<string>());
         }
 
+        #endregion
 
+        #region JSON Methods
+
+        public void ReadPotsFromJson()
+        {
+            if (!File.Exists(potsSaveFile))
+            {
+                SavePotsToJson();
+                return;
+            }
+
+            string input = File.ReadAllText(potsSaveFile);
+            Pots = JsonSerializer.Deserialize<Dictionary<int, List<string>>>(input, new JsonSerializerOptions { WriteIndented = true });
+            if (Pots.Count == 0)
+                Pots.Add(1, new List<string>());
+        }
+
+        public void SavePotsToJson()
+        {
+            try
+            {
+                string output = JsonSerializer.Serialize(Pots, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(potsSaveFile, output);
+            }
+
+            catch { return; }
+        }
 
         public void ReadTeamsFromJson()
         {
@@ -135,58 +170,38 @@ namespace DrawSimulator
             catch { return; }
         }
 
-        public void ReadPotsFromJson()
-        {
-            if (!File.Exists(potsSaveFile))
-            {
-                SavePotsToJson();
-                return;
-            }
+        #endregion
 
-            string input = File.ReadAllText(potsSaveFile);
-            Pots = JsonSerializer.Deserialize<Dictionary<int, List<string>>>(input, new JsonSerializerOptions { WriteIndented = true });
-        }
+        #region Private Support Functions
 
-        public void SavePotsToJson()
-        {
-            try
-            {
-                string output = JsonSerializer.Serialize(Pots, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(potsSaveFile, output);
-            }
-
-            catch { return; }
-        }
-
-
-
-        private List<string> GenerateDrawPot(string currentteam, int potkey, int nrteamsperpot)
-        {
-            var pot = Pots[potkey];
-            var drawpot = new List<string>();
-            foreach (var team in pot)
-            {
-                if (TeamsInDraw[team].ValidateTeam(TeamsInDraw[currentteam], GetPot(currentteam), nrteamsperpot)
-                    && TeamsInDraw[currentteam].ValidateTeam(TeamsInDraw[team], GetPot(team), nrteamsperpot))
-                {
-                    drawpot.Add(team);
-                }
-            }
-            return drawpot;
-        }
-
-        private void SetDrawPots(int nrTeamsPerPot)
+        private void SetDrawPots()
         {
             foreach (var team in TeamsInDraw)
             {
                 foreach (var drawpotkey in Pots.Keys)
                 {
                     if (TeamsInDraw[team.Key].DrawPots.ContainsKey(drawpotkey))
-                        TeamsInDraw[team.Key].DrawPots[drawpotkey] = GenerateDrawPot(team.Key, drawpotkey, nrTeamsPerPot);
+                        TeamsInDraw[team.Key].DrawPots[drawpotkey] = GenerateDrawPot(team.Key, drawpotkey);
                     else
-                        TeamsInDraw[team.Key].DrawPots.Add(drawpotkey, GenerateDrawPot(team.Key, drawpotkey, nrTeamsPerPot));
+                        TeamsInDraw[team.Key].DrawPots.Add(drawpotkey, GenerateDrawPot(team.Key, drawpotkey));
                 }
             }
+
+            FindAndFillTeamWithOnlyOneOutcome();
+        }
+        private List<string> GenerateDrawPot(string currentteam, int potkey)
+        {
+            var pot = Pots[potkey];
+            var drawpot = new List<string>();
+            foreach (var team in pot)
+            {
+                if (TeamsInDraw[team].ValidateTeam(TeamsInDraw[currentteam], GetPot(currentteam), nrTeamsPerPot)
+                    && TeamsInDraw[currentteam].ValidateTeam(TeamsInDraw[team], GetPot(team), nrTeamsPerPot))
+                {
+                    drawpot.Add(team);
+                }
+            }
+            return drawpot;
         }
 
         private Dictionary<string, Team> GetTeamsInDraw()
@@ -202,12 +217,8 @@ namespace DrawSimulator
             return res;
         }
 
-        private void AllocateTeam(string team, string drawnteam, int drawpotkey, int currentpotkey, int nrteamsperpot)
+        private void AllocateTeam(string team, string drawnteam, int drawpotkey, int currentpotkey)
         {
-            if (TeamsInDraw[team].DrawnTeams[drawpotkey].Count == nrteamsperpot || TeamsInDraw[drawnteam].DrawnTeams[currentpotkey].Count == nrteamsperpot)
-            {
-                int x = -1;
-            }
             //add drawn team to current team
             if (TeamsInDraw[team].DrawnTeams.ContainsKey(drawpotkey))
                 TeamsInDraw[team].DrawnTeams[drawpotkey].Add(drawnteam);
@@ -221,8 +232,28 @@ namespace DrawSimulator
             else
                 TeamsInDraw[drawnteam].DrawnTeams.Add(currentpotkey, new List<string> { team });
             TeamsInDraw[drawnteam].DrawnAssociations.Add(TeamsInDraw[team].Association);
+        }
 
-            SetDrawPots(nrteamsperpot);
+        private void FindAndFillTeamWithOnlyOneOutcome()
+        {
+            bool filled = false;
+            foreach (var tid in TeamsInDraw.Values)
+            {
+                foreach (var dp in tid.DrawPots)
+                {
+                    if (dp.Value.Count + tid.DrawnTeams[dp.Key].Count == nrTeamsPerPot && dp.Value.Count != 0)
+                    {
+                        foreach (var teamtoallocate in dp.Value)
+                        {
+                            AllocateTeam(tid.Name, teamtoallocate, dp.Key, GetPot(tid.Name));
+                        }
+                        filled = true;
+                    }
+                }
+            }
+
+            if (filled)
+                SetDrawPots();
         }
 
         private int GetPot(string team)
@@ -234,5 +265,7 @@ namespace DrawSimulator
             }
             return 0;
         }
+
+        #endregion
     }
 }
