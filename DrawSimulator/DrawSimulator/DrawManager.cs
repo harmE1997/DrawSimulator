@@ -26,7 +26,7 @@ namespace DrawSimulator
         }
 
         #region Public Operators
-        public async Task<List<string>> RunDraw(bool allowfromownpot, int nrteamsperpot)
+        public async Task<List<string>> RunDraw(bool allowfromownpot, int nrteamsperpot, bool classicdraw)
         {
             //remove the last draw
             foreach (var team in AvailableTeams)
@@ -45,6 +45,9 @@ namespace DrawSimulator
 
             foreach (var Pot in Pots)
             {
+                if (classicdraw && Pot.Key > 1)
+                    continue;
+
                 foreach (var team in Pot.Value)
                 {
                     foreach (var drawpotkey in Pots.Keys)
@@ -82,7 +85,7 @@ namespace DrawSimulator
                 }
             }
 
-            if (!VerifyDraw())
+            if (!VerifyDraw(allowfromownpot, classicdraw))
                 results = new List<string>();
 
             return results;
@@ -245,18 +248,38 @@ namespace DrawSimulator
             return 0;
         }
 
-        private bool VerifyDraw()
+        private bool VerifyDraw(bool allowfromownpot, bool classicdraw)
         {
             foreach (var team in TeamsInDraw)
             {
+                if (classicdraw && GetPot(team.Key) > 1)
+                    continue;
                 foreach (var pot in team.Value.DrawnTeams)
                 {
                     if (pot.Value.Count != nrTeamsPerPot)
-                        return false;
+                    {
+                        if(allowfromownpot || pot.Key != GetPot(team.Key))
+                            return false;
+                    }
                 }
             }
 
             return true;
+        }
+
+        public bool VerifyPots()
+        {
+            if(Pots.Count ==0)
+                return false;
+
+            int potsize = Pots.First().Value.Count;
+            foreach (var pot in Pots)
+            {
+                if (pot.Value.Count != potsize)
+                    return false;
+            }
+            return true;
+
         }
 
         #endregion

@@ -67,6 +67,8 @@ public class MainViewModel : ViewModelBase
     private int nrAttempts;
     public int NrAttempts { get => nrAttempts; set => this.RaiseAndSetIfChanged(ref nrAttempts, value); }
 
+    private bool classicDraw = false;
+    public bool ClassicDraw { get => classicDraw; set => this.RaiseAndSetIfChanged(ref classicDraw, value); }
 
     private List<string> drawResults;
     public List<string> DrawResults { get => drawResults; set => this.RaiseAndSetIfChanged(ref drawResults, value); }
@@ -134,11 +136,17 @@ public class MainViewModel : ViewModelBase
     {
         int counter = 0;
         var res = new List<string>();
+        if (!drawManager.VerifyPots())
+        {
+            PopupManager.ShowMessage("Cannot perform draw. Pots invalid");
+            return;
+        }
+
         while (res.Count == 0)
         {
             counter++;
             NrAttempts = counter;
-            res = await drawManager.RunDraw(AllowFromOwnPot, NrTeamsPerPot);
+            res = await drawManager.RunDraw(AllowFromOwnPot, NrTeamsPerPot, ClassicDraw);
         }
 
         DrawResults = res;

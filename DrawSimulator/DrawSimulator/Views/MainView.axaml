@@ -44,8 +44,9 @@
 						<NumericUpDown Grid.Column="0" Grid.Row="0" Width="150" Height="50" Value="{Binding NrPots}" Minimum="2" FontSize="20" VerticalContentAlignment="Center"/>
 						<TextBlock Text="Number of allocated teams per pot" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="5"/>
 						<NumericUpDown Grid.Column="0" Grid.Row="1" Width="150" Height="50" Value="{Binding NrTeamsPerPot}" Minimum="1" FontSize="20" VerticalContentAlignment="Center"/>
-						<CheckBox Grid.ColumnSpan="2" Grid.Row="2" Content="Allow teams from own pot" IsChecked="{Binding AllowFromOwnPot}"/>
-						<Button Grid.Row="3" Grid.ColumnSpan="2" Width="390" Height="75" Command="{Binding cmdRunDraw}" Content="Run Draw" FontSize="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+						<CheckBox Grid.Column="0" Grid.Row="2" Content="Allow teams from own pot" IsChecked="{Binding AllowFromOwnPot}"/>
+            <CheckBox Grid.Column="1" Grid.Row="2" Content="Classic Draw" IsChecked="{Binding ClassicDraw}"/>
+            <Button Grid.Row="3" Grid.ColumnSpan="2" Width="390" Height="75" Command="{Binding cmdRunDraw}" Content="Run Draw" FontSize="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 						<TextBlock Text="Performing the draw might take a few seconds " Grid.ColumnSpan="2" Grid.Row="4" HorizontalAlignment="Center" FontWeight="Bold"/>
 						<TextBlock Text="Number of attempts: " Grid.Column="0" Grid.Row="5" Margin="5"/>
 						<TextBlock Text="{Binding NrAttempts}" Grid.Column="1" Grid.Row="5" Margin="5"/>
