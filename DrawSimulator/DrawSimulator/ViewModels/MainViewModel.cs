@@ -1,6 +1,8 @@
 ﻿using ReactiveUI;
+using System;
 using System.Collections.Generic;
 using System.Reactive;
+using System.Reactive.Linq;
 
 namespace DrawSimulator.ViewModels;
 
@@ -130,6 +132,18 @@ public class MainViewModel : ViewModelBase
         cmdClearPot = ReactiveCommand.Create(ClearPot, clearPotCommandCanExecute);
         cmdAddAssociation = ReactiveCommand.Create(AddAssociation, addAssociationCommandCanExecute);
         cmdRemoveAssociation = ReactiveCommand.Create(RemoveAssociation, removeAssociationCommandCanExecute);
+
+        this.WhenAnyValue(x => x.SelectedAvailableTeam).ObserveOn(RxApp.MainThreadScheduler).Subscribe(team =>
+        {
+            if (team != null)
+            {
+                Team t = drawManager.AvailableTeams[team.Team];
+                NewTeamName = t.Name;
+                NewTeamAssociation = t.Association;
+                NewTeamProhibitedTeams = t.ProhibitedTeamsToString();
+                NewTeamProhibitedAssociations = t.ProhibitedAssociationsToString();
+            }
+        });
     }
 
     private async void RunDraw()

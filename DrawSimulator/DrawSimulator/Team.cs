@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace DrawSimulator
 {
@@ -46,7 +47,7 @@ namespace DrawSimulator
             if (DrawnTeams[pot].Contains(team.Name))
                 return false;
 
-            if(nrAssociationAppearances(team.Association) == 2)
+            if (nrAssociationAppearances(team.Association) == 2)
                 return false;
 
             return true;
@@ -72,6 +73,27 @@ namespace DrawSimulator
                 foreach (var team in pot.Value)
                     res += team + ", ";
             }
+            return res;
+        }
+
+        public string ProhibitedTeamsToString()
+        {
+            string res = "";
+            foreach (var pt in ProhibitedTeams)
+                res += pt + ", ";
+            return res;
+        }
+
+        public string ProhibitedAssociationsToString()
+        {
+            string res = "";
+            foreach (var pa in ProhibitedAssociations)
+            {
+                res += pa;
+                if (pa != ProhibitedAssociations.Last())
+                    res += ", ";
+            }
+
             return res;
         }
     }

@@ -17,7 +17,7 @@
 				<TextBlock Text="Prohibited Teams" Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
 				<TextBox Text="{Binding NewTeamProhibitedTeams}" Grid.Row="2" Grid.Column="1" Margin="5"/>
 				<TextBlock Text="Prohibited Associations" Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
-				<TextBox Text="{Binding NewTeamProhibitedAsssociations}" Grid.Row="3" Grid.Column="1" Margin="5"/>
+				<TextBox Text="{Binding NewTeamProhibitedAssociations}" Grid.Row="3" Grid.Column="1" Margin="5"/>
 				<Button Grid.Row="4" Grid.ColumnSpan="2" Width="700" Height="40" Command="{Binding cmdAddTeam}" Content="Add Team" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
 			</Grid>
 		</Border>

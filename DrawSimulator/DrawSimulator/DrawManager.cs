@@ -94,7 +94,7 @@ namespace DrawSimulator
         public void AddNewTeam(string newteamname, string newteamassociation, string newteamprohibitedteams, string newteamprohibitedassociations)
         {
             if (AvailableTeams.ContainsKey(newteamname))
-                return;
+                RemoveTeam(newteamname);
 
             var prohibitedteams = new List<string>();
             if (!string.IsNullOrEmpty(newteamprohibitedteams))
@@ -112,7 +112,9 @@ namespace DrawSimulator
         public void RemoveTeam(string team)
         {
             AvailableTeams.Remove(team);
-            Pots[GetPot(team)].Remove(team);
+            var p = GetPot(team);
+            if (p != 0)
+                Pots[p].Remove(team);
             SaveToJson(AvailableTeams, TeamsSaveFile);
             SaveToJson(Pots, PotsSaveFile);
         }
@@ -258,7 +260,7 @@ namespace DrawSimulator
                 {
                     if (pot.Value.Count != nrTeamsPerPot)
                     {
-                        if(allowfromownpot || pot.Key != GetPot(team.Key))
+                        if (allowfromownpot || pot.Key != GetPot(team.Key))
                             return false;
                     }
                 }
@@ -269,7 +271,7 @@ namespace DrawSimulator
 
         public bool VerifyPots()
         {
-            if(Pots.Count ==0)
+            if (Pots.Count == 0)
                 return false;
 
             int potsize = Pots.First().Value.Count;
