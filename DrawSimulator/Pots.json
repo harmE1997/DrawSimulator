@@ -1,3 +1,46 @@
 {
-  "1": []
+  "1": [
+    "Ajax",
+    "Arsenal",
+    "AS Monaco",
+    "Atalanta Bergamo",
+    "Athletic Bilbao",
+    "Atl\u00E9tico Madrid",
+    "Barcelona",
+    "Bayer 04 Leverkusen",
+    "Bayern M\u00FCnchen"
+  ],
+  "2": [
+    "Benfica",
+    "Borussia Dortmund",
+    "Celtic",
+    "Chelsea",
+    "Club Brugge",
+    "Eintracht Frankfurt",
+    "Galatasaray",
+    "Internazionale Milano",
+    "Juventus"
+  ],
+  "3": [
+    "Kopenhagen",
+    "Liverpool",
+    "Manchester City",
+    "Napoli",
+    "Newcastle United",
+    "Olympiakos",
+    "Olympique Marseille",
+    "Paris Saint-Germain",
+    "PSV"
+  ],
+  "4": [
+    "Qarabag",
+    "Real Madrid",
+    "Red Star Belgrade",
+    "Slavia Prague",
+    "Sporting CP Lissabon",
+    "Sturm Graz",
+    "Tottenham Hotspur",
+    "Union Saint-Gillis",
+    "Villareal"
+  ]
 }

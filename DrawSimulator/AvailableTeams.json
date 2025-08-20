@@ -1,1 +1,1850 @@
-{}
+{
+  "Paris Saint-Germain": {
+    "Name": "Paris Saint-Germain",
+    "Association": "France",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Athletic Bilbao",
+        "Atl\u00E9tico Madrid"
+      ],
+      "2": [
+        "Chelsea",
+        "Internazionale Milano"
+      ],
+      "3": [
+        "Kopenhagen",
+        "Liverpool"
+      ],
+      "4": [
+        "Red Star Belgrade",
+        "Sporting CP Lissabon"
+      ]
+    },
+    "DrawnAssociations": [
+      "Spain",
+      "Spain",
+      "England",
+      "Italy",
+      "Denmark",
+      "England",
+      "Serbia",
+      "Portugal"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Real Madrid": {
+    "Name": "Real Madrid",
+    "Association": "Spain",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Arsenal",
+        "AS Monaco"
+      ],
+      "2": [
+        "Borussia Dortmund",
+        "Club Brugge"
+      ],
+      "3": [
+        "Liverpool",
+        "Olympiakos"
+      ],
+      "4": [
+        "Sturm Graz",
+        "Union Saint-Gillis"
+      ]
+    },
+    "DrawnAssociations": [
+      "England",
+      "France",
+      "Germany",
+      "Belgium",
+      "England",
+      "Greece",
+      "Austria",
+      "Belgium"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Barcelona": {
+    "Name": "Barcelona",
+    "Association": "Spain",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Bayer 04 Leverkusen",
+        "Bayern M\u00FCnchen"
+      ],
+      "2": [
+        "Chelsea",
+        "Galatasaray"
+      ],
+      "3": [
+        "Napoli",
+        "Kopenhagen"
+      ],
+      "4": [
+        "Slavia Prague",
+        "Tottenham Hotspur"
+      ]
+    },
+    "DrawnAssociations": [
+      "Germany",
+      "Germany",
+      "England",
+      "Denmark",
+      "Italy",
+      "Denmark",
+      "Czechia",
+      "England"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Atl\u00E9tico Madrid": {
+    "Name": "Atl\u00E9tico Madrid",
+    "Association": "Spain",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "AS Monaco",
+        "Atalanta Bergamo"
+      ],
+      "2": [
+        "Eintracht Frankfurt",
+        "Club Brugge"
+      ],
+      "3": [
+        "Paris Saint-Germain",
+        "Napoli"
+      ],
+      "4": [
+        "Slavia Prague",
+        "Qarabag"
+      ]
+    },
+    "DrawnAssociations": [
+      "France",
+      "Italy",
+      "Germany",
+      "Belgium",
+      "France",
+      "Italy",
+      "Czechia",
+      "Azerbaijan"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Villareal": {
+    "Name": "Villareal",
+    "Association": "Spain",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Bayer 04 Leverkusen",
+        "Bayern M\u00FCnchen"
+      ],
+      "2": [
+        "Benfica",
+        "Internazionale Milano"
+      ],
+      "3": [
+        "Olympique Marseille",
+        "PSV"
+      ],
+      "4": [
+        "Red Star Belgrade",
+        "Tottenham Hotspur"
+      ]
+    },
+    "DrawnAssociations": [
+      "Germany",
+      "Germany",
+      "Portugal",
+      "Italy",
+      "France",
+      "Netherlands",
+      "Serbia",
+      "England"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Athletic Bilbao": {
+    "Name": "Athletic Bilbao",
+    "Association": "Spain",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Ajax",
+        "Arsenal"
+      ],
+      "2": [
+        "Eintracht Frankfurt",
+        "Galatasaray"
+      ],
+      "3": [
+        "Manchester City",
+        "Paris Saint-Germain"
+      ],
+      "4": [
+        "Union Saint-Gillis",
+        "Sporting CP Lissabon"
+      ]
+    },
+    "DrawnAssociations": [
+      "Netherlands",
+      "England",
+      "Germany",
+      "Denmark",
+      "England",
+      "France",
+      "Belgium",
+      "Portugal"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Olympique Marseille": {
+    "Name": "Olympique Marseille",
+    "Association": "France",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Arsenal",
+        "Atalanta Bergamo"
+      ],
+      "2": [
+        "Borussia Dortmund",
+        "Chelsea"
+      ],
+      "3": [
+        "Olympiakos",
+        "PSV"
+      ],
+      "4": [
+        "Villareal",
+        "Union Saint-Gillis"
+      ]
+    },
+    "DrawnAssociations": [
+      "England",
+      "Italy",
+      "Germany",
+      "England",
+      "Greece",
+      "Netherlands",
+      "Spain",
+      "Belgium"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "AS Monaco": {
+    "Name": "AS Monaco",
+    "Association": "France",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Atl\u00E9tico Madrid",
+        "Bayer 04 Leverkusen"
+      ],
+      "2": [
+        "Borussia Dortmund",
+        "Internazionale Milano"
+      ],
+      "3": [
+        "Kopenhagen",
+        "PSV"
+      ],
+      "4": [
+        "Real Madrid",
+        "Union Saint-Gillis"
+      ]
+    },
+    "DrawnAssociations": [
+      "Spain",
+      "Germany",
+      "Germany",
+      "Italy",
+      "Denmark",
+      "Netherlands",
+      "Spain",
+      "Belgium"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Manchester City": {
+    "Name": "Manchester City",
+    "Association": "England",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Athletic Bilbao",
+        "Bayer 04 Leverkusen"
+      ],
+      "2": [
+        "Borussia Dortmund",
+        "Celtic"
+      ],
+      "3": [
+        "Kopenhagen",
+        "Napoli"
+      ],
+      "4": [
+        "Red Star Belgrade",
+        "Slavia Prague"
+      ]
+    },
+    "DrawnAssociations": [
+      "Spain",
+      "Germany",
+      "Germany",
+      "Scotland",
+      "Denmark",
+      "Italy",
+      "Serbia",
+      "Czechia"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Liverpool": {
+    "Name": "Liverpool",
+    "Association": "England",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Ajax",
+        "Bayern M\u00FCnchen"
+      ],
+      "2": [
+        "Eintracht Frankfurt",
+        "Galatasaray"
+      ],
+      "3": [
+        "Paris Saint-Germain",
+        "PSV"
+      ],
+      "4": [
+        "Sporting CP Lissabon",
+        "Real Madrid"
+      ]
+    },
+    "DrawnAssociations": [
+      "Netherlands",
+      "Germany",
+      "Germany",
+      "Denmark",
+      "France",
+      "Netherlands",
+      "Portugal",
+      "Spain"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Chelsea": {
+    "Name": "Chelsea",
+    "Association": "England",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Atalanta Bergamo",
+        "Barcelona"
+      ],
+      "2": [
+        "Galatasaray",
+        "Internazionale Milano"
+      ],
+      "3": [
+        "Olympique Marseille",
+        "Paris Saint-Germain"
+      ],
+      "4": [
+        "Union Saint-Gillis",
+        "Sturm Graz"
+      ]
+    },
+    "DrawnAssociations": [
+      "Italy",
+      "Spain",
+      "Denmark",
+      "Italy",
+      "France",
+      "France",
+      "Belgium",
+      "Austria"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Arsenal": {
+    "Name": "Arsenal",
+    "Association": "England",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Athletic Bilbao",
+        "Bayern M\u00FCnchen"
+      ],
+      "2": [
+        "Club Brugge",
+        "Juventus"
+      ],
+      "3": [
+        "Olympique Marseille",
+        "PSV"
+      ],
+      "4": [
+        "Real Madrid",
+        "Red Star Belgrade"
+      ]
+    },
+    "DrawnAssociations": [
+      "Spain",
+      "Germany",
+      "Belgium",
+      "Italy",
+      "France",
+      "Netherlands",
+      "Spain",
+      "Serbia"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Tottenham Hotspur": {
+    "Name": "Tottenham Hotspur",
+    "Association": "England",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Barcelona",
+        "Bayer 04 Leverkusen"
+      ],
+      "2": [
+        "Internazionale Milano",
+        "Juventus"
+      ],
+      "3": [
+        "Kopenhagen",
+        "Olympiakos"
+      ],
+      "4": [
+        "Slavia Prague",
+        "Villareal"
+      ]
+    },
+    "DrawnAssociations": [
+      "Spain",
+      "Germany",
+      "Italy",
+      "Italy",
+      "Denmark",
+      "Greece",
+      "Czechia",
+      "Spain"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Newcastle United": {
+    "Name": "Newcastle United",
+    "Association": "England",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Ajax",
+        "Atalanta Bergamo"
+      ],
+      "2": [
+        "Internazionale Milano",
+        "Juventus"
+      ],
+      "3": [
+        "Napoli",
+        "Olympiakos"
+      ],
+      "4": [
+        "Qarabag",
+        "Sturm Graz"
+      ]
+    },
+    "DrawnAssociations": [
+      "Netherlands",
+      "Italy",
+      "Italy",
+      "Italy",
+      "Italy",
+      "Greece",
+      "Azerbaijan",
+      "Austria"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Internazionale Milano": {
+    "Name": "Internazionale Milano",
+    "Association": "Italy",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Ajax",
+        "AS Monaco"
+      ],
+      "2": [
+        "Celtic",
+        "Chelsea"
+      ],
+      "3": [
+        "Newcastle United",
+        "Paris Saint-Germain"
+      ],
+      "4": [
+        "Tottenham Hotspur",
+        "Villareal"
+      ]
+    },
+    "DrawnAssociations": [
+      "Netherlands",
+      "France",
+      "Scotland",
+      "England",
+      "England",
+      "England",
+      "France",
+      "Spain"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Atalanta Bergamo": {
+    "Name": "Atalanta Bergamo",
+    "Association": "Italy",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Ajax",
+        "Atl\u00E9tico Madrid"
+      ],
+      "2": [
+        "Benfica",
+        "Chelsea"
+      ],
+      "3": [
+        "Olympique Marseille",
+        "Newcastle United"
+      ],
+      "4": [
+        "Sporting CP Lissabon",
+        "Red Star Belgrade"
+      ]
+    },
+    "DrawnAssociations": [
+      "Netherlands",
+      "Spain",
+      "Portugal",
+      "England",
+      "France",
+      "England",
+      "Portugal",
+      "Serbia"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Juventus": {
+    "Name": "Juventus",
+    "Association": "Italy",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Arsenal",
+        "Bayer 04 Leverkusen"
+      ],
+      "2": [
+        "Borussia Dortmund",
+        "Celtic"
+      ],
+      "3": [
+        "Newcastle United",
+        "Kopenhagen"
+      ],
+      "4": [
+        "Tottenham Hotspur",
+        "Qarabag"
+      ]
+    },
+    "DrawnAssociations": [
+      "England",
+      "Germany",
+      "Germany",
+      "Scotland",
+      "England",
+      "England",
+      "Denmark",
+      "Azerbaijan"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Napoli": {
+    "Name": "Napoli",
+    "Association": "Italy",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Atl\u00E9tico Madrid",
+        "Barcelona"
+      ],
+      "2": [
+        "Eintracht Frankfurt",
+        "Galatasaray"
+      ],
+      "3": [
+        "Newcastle United",
+        "Manchester City"
+      ],
+      "4": [
+        "Slavia Prague",
+        "Qarabag"
+      ]
+    },
+    "DrawnAssociations": [
+      "Spain",
+      "Spain",
+      "Germany",
+      "Denmark",
+      "England",
+      "England",
+      "Czechia",
+      "Azerbaijan"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Bayern M\u00FCnchen": {
+    "Name": "Bayern M\u00FCnchen",
+    "Association": "Germany",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Arsenal",
+        "Barcelona"
+      ],
+      "2": [
+        "Celtic",
+        "Benfica"
+      ],
+      "3": [
+        "Olympiakos",
+        "Liverpool"
+      ],
+      "4": [
+        "Villareal",
+        "Sturm Graz"
+      ]
+    },
+    "DrawnAssociations": [
+      "England",
+      "Spain",
+      "Spain",
+      "Scotland",
+      "Greece",
+      "Portugal",
+      "England",
+      "Austria"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Borussia Dortmund": {
+    "Name": "Borussia Dortmund",
+    "Association": "Germany",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Ajax",
+        "AS Monaco"
+      ],
+      "2": [
+        "Benfica",
+        "Juventus"
+      ],
+      "3": [
+        "Manchester City",
+        "Olympique Marseille"
+      ],
+      "4": [
+        "Sporting CP Lissabon",
+        "Real Madrid"
+      ]
+    },
+    "DrawnAssociations": [
+      "Netherlands",
+      "France",
+      "Portugal",
+      "Italy",
+      "England",
+      "France",
+      "Portugal",
+      "Spain"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Bayer 04 Leverkusen": {
+    "Name": "Bayer 04 Leverkusen",
+    "Association": "Germany",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "AS Monaco",
+        "Barcelona"
+      ],
+      "2": [
+        "Celtic",
+        "Juventus"
+      ],
+      "3": [
+        "Olympiakos",
+        "Manchester City"
+      ],
+      "4": [
+        "Villareal",
+        "Tottenham Hotspur"
+      ]
+    },
+    "DrawnAssociations": [
+      "France",
+      "Spain",
+      "Spain",
+      "Scotland",
+      "Greece",
+      "Italy",
+      "England",
+      "England"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Eintracht Frankfurt": {
+    "Name": "Eintracht Frankfurt",
+    "Association": "Germany",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Athletic Bilbao",
+        "Atl\u00E9tico Madrid"
+      ],
+      "2": [
+        "Club Brugge",
+        "Galatasaray"
+      ],
+      "3": [
+        "Napoli",
+        "Liverpool"
+      ],
+      "4": [
+        "Union Saint-Gillis",
+        "Sturm Graz"
+      ]
+    },
+    "DrawnAssociations": [
+      "Spain",
+      "Spain",
+      "Belgium",
+      "Denmark",
+      "Italy",
+      "England",
+      "Belgium",
+      "Austria"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "PSV": {
+    "Name": "PSV",
+    "Association": "Netherlands",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Arsenal",
+        "AS Monaco"
+      ],
+      "2": [
+        "Benfica",
+        "Celtic"
+      ],
+      "3": [
+        "Liverpool",
+        "Olympique Marseille"
+      ],
+      "4": [
+        "Villareal",
+        "Union Saint-Gillis"
+      ]
+    },
+    "DrawnAssociations": [
+      "England",
+      "France",
+      "Portugal",
+      "Scotland",
+      "England",
+      "France",
+      "Spain",
+      "Belgium"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Ajax": {
+    "Name": "Ajax",
+    "Association": "Netherlands",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Athletic Bilbao",
+        "Atalanta Bergamo"
+      ],
+      "2": [
+        "Borussia Dortmund",
+        "Internazionale Milano"
+      ],
+      "3": [
+        "Newcastle United",
+        "Liverpool"
+      ],
+      "4": [
+        "Sturm Graz",
+        "Qarabag"
+      ]
+    },
+    "DrawnAssociations": [
+      "Spain",
+      "Italy",
+      "Germany",
+      "Italy",
+      "England",
+      "England",
+      "Austria",
+      "Azerbaijan"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Sporting CP Lissabon": {
+    "Name": "Sporting CP Lissabon",
+    "Association": "Portugal",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Atalanta Bergamo",
+        "Athletic Bilbao"
+      ],
+      "2": [
+        "Borussia Dortmund",
+        "Club Brugge"
+      ],
+      "3": [
+        "Liverpool",
+        "Paris Saint-Germain"
+      ],
+      "4": [
+        "Red Star Belgrade",
+        "Slavia Prague"
+      ]
+    },
+    "DrawnAssociations": [
+      "Italy",
+      "Spain",
+      "Germany",
+      "Belgium",
+      "England",
+      "France",
+      "Serbia",
+      "Czechia"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Benfica": {
+    "Name": "Benfica",
+    "Association": "Portugal",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Atalanta Bergamo",
+        "Bayern M\u00FCnchen"
+      ],
+      "2": [
+        "Club Brugge",
+        "Borussia Dortmund"
+      ],
+      "3": [
+        "PSV",
+        "Olympiakos"
+      ],
+      "4": [
+        "Red Star Belgrade",
+        "Villareal"
+      ]
+    },
+    "DrawnAssociations": [
+      "Italy",
+      "Germany",
+      "Belgium",
+      "Germany",
+      "Netherlands",
+      "Greece",
+      "Serbia",
+      "Spain"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Olympiakos": {
+    "Name": "Olympiakos",
+    "Association": "Greece",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Bayer 04 Leverkusen",
+        "Bayern M\u00FCnchen"
+      ],
+      "2": [
+        "Benfica",
+        "Club Brugge"
+      ],
+      "3": [
+        "Newcastle United",
+        "Olympique Marseille"
+      ],
+      "4": [
+        "Tottenham Hotspur",
+        "Real Madrid"
+      ]
+    },
+    "DrawnAssociations": [
+      "Germany",
+      "Germany",
+      "Portugal",
+      "Belgium",
+      "England",
+      "England",
+      "France",
+      "Spain"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Slavia Prague": {
+    "Name": "Slavia Prague",
+    "Association": "Czechia",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Atl\u00E9tico Madrid",
+        "Barcelona"
+      ],
+      "2": [
+        "Celtic",
+        "Galatasaray"
+      ],
+      "3": [
+        "Manchester City",
+        "Napoli"
+      ],
+      "4": [
+        "Sporting CP Lissabon",
+        "Tottenham Hotspur"
+      ]
+    },
+    "DrawnAssociations": [
+      "Spain",
+      "Spain",
+      "Scotland",
+      "Denmark",
+      "England",
+      "Italy",
+      "Portugal",
+      "England"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Galatasaray": {
+    "Name": "Galatasaray",
+    "Association": "Turkye",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Union Saint-Gillis": {
+    "Name": "Union Saint-Gillis",
+    "Association": "Belgium",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "AS Monaco",
+        "Athletic Bilbao"
+      ],
+      "2": [
+        "Chelsea",
+        "Eintracht Frankfurt"
+      ],
+      "3": [
+        "Olympique Marseille",
+        "PSV"
+      ],
+      "4": [
+        "Qarabag",
+        "Real Madrid"
+      ]
+    },
+    "DrawnAssociations": [
+      "France",
+      "Spain",
+      "England",
+      "Germany",
+      "France",
+      "Netherlands",
+      "Azerbaijan",
+      "Spain"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Rangers FC": {
+    "Name": "Rangers FC",
+    "Association": "Scotland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    },
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Celtic": {
+    "Name": "Celtic",
+    "Association": "Scotland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Bayer 04 Leverkusen",
+        "Bayern M\u00FCnchen"
+      ],
+      "2": [
+        "Juventus",
+        "Internazionale Milano"
+      ],
+      "3": [
+        "Manchester City",
+        "PSV"
+      ],
+      "4": [
+        "Red Star Belgrade",
+        "Slavia Prague"
+      ]
+    },
+    "DrawnAssociations": [
+      "Germany",
+      "Germany",
+      "Italy",
+      "Italy",
+      "England",
+      "Netherlands",
+      "Serbia",
+      "Czechia"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Qarabag": {
+    "Name": "Qarabag",
+    "Association": "Azerbaijan",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Ajax",
+        "Atl\u00E9tico Madrid"
+      ],
+      "2": [
+        "Galatasaray",
+        "Juventus"
+      ],
+      "3": [
+        "Napoli",
+        "Newcastle United"
+      ],
+      "4": [
+        "Union Saint-Gillis",
+        "Sturm Graz"
+      ]
+    },
+    "DrawnAssociations": [
+      "Netherlands",
+      "Spain",
+      "Denmark",
+      "Italy",
+      "Italy",
+      "England",
+      "Belgium",
+      "Austria"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Sturm Graz": {
+    "Name": "Sturm Graz",
+    "Association": "Austria",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Ajax",
+        "Bayern M\u00FCnchen"
+      ],
+      "2": [
+        "Chelsea",
+        "Eintracht Frankfurt"
+      ],
+      "3": [
+        "Kopenhagen",
+        "Newcastle United"
+      ],
+      "4": [
+        "Qarabag",
+        "Real Madrid"
+      ]
+    },
+    "DrawnAssociations": [
+      "Netherlands",
+      "Germany",
+      "England",
+      "Germany",
+      "Denmark",
+      "England",
+      "Azerbaijan",
+      "Spain"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Kopenhagen": {
+    "Name": "Kopenhagen",
+    "Association": "Denmark",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "AS Monaco",
+        "Barcelona"
+      ],
+      "2": [
+        "Club Brugge",
+        "Juventus"
+      ],
+      "3": [
+        "Manchester City",
+        "Paris Saint-Germain"
+      ],
+      "4": [
+        "Tottenham Hotspur",
+        "Sturm Graz"
+      ]
+    },
+    "DrawnAssociations": [
+      "France",
+      "Spain",
+      "Belgium",
+      "Italy",
+      "England",
+      "France",
+      "England",
+      "Austria"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Red Star Belgrade": {
+    "Name": "Red Star Belgrade",
+    "Association": "Serbia",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [
+      "Kosovo"
+    ],
+    "DrawnTeams": {
+      "1": [
+        "Arsenal",
+        "Atalanta Bergamo"
+      ],
+      "2": [
+        "Benfica",
+        "Celtic"
+      ],
+      "3": [
+        "Manchester City",
+        "Paris Saint-Germain"
+      ],
+      "4": [
+        "Sporting CP Lissabon",
+        "Villareal"
+      ]
+    },
+    "DrawnAssociations": [
+      "England",
+      "Italy",
+      "Portugal",
+      "Scotland",
+      "England",
+      "France",
+      "Portugal",
+      "Spain"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Club Brugge": {
+    "Name": "Club Brugge",
+    "Association": "Belgium",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {
+      "1": [
+        "Arsenal",
+        "Atl\u00E9tico Madrid"
+      ],
+      "2": [
+        "Benfica",
+        "Eintracht Frankfurt"
+      ],
+      "3": [
+        "Kopenhagen",
+        "Olympiakos"
+      ],
+      "4": [
+        "Real Madrid",
+        "Sporting CP Lissabon"
+      ]
+    },
+    "DrawnAssociations": [
+      "England",
+      "Spain",
+      "Portugal",
+      "Germany",
+      "Denmark",
+      "Greece",
+      "Spain",
+      "Portugal"
+    ],
+    "DrawPots": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "Pafos": {
+    "Name": "Pafos",
+    "Association": "Cyprus",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Ferencv\u00E1ros": {
+    "Name": "Ferencv\u00E1ros",
+    "Association": "Hungary",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Bod\u00F8/Glimt": {
+    "Name": "Bod\u00F8/Glimt",
+    "Association": "Norway",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Basel": {
+    "Name": "Basel",
+    "Association": "Switzerland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Kairat": {
+    "Name": "Kairat",
+    "Association": "Kazakhstan",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Midtjyland": {
+    "Name": "Midtjyland",
+    "Association": "Denmark",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "KuPS": {
+    "Name": "KuPS",
+    "Association": "Finland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Malm\u00F6 FF": {
+    "Name": "Malm\u00F6 FF",
+    "Association": "Sweden",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Sigma Olomouc": {
+    "Name": "Sigma Olomouc",
+    "Association": "Czechia",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Brann Berg": {
+    "Name": "Brann Berg",
+    "Association": "Norway",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "AEK Larnaca": {
+    "Name": "AEK Larnaca",
+    "Association": "Cyprus",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Panathinaikos": {
+    "Name": "Panathinaikos",
+    "Association": "Greece",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Samsunspor": {
+    "Name": "Samsunspor",
+    "Association": "Turkye",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Maccabi Tel Aviv": {
+    "Name": "Maccabi Tel Aviv",
+    "Association": "Israel",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Dynamo Kyiv": {
+    "Name": "Dynamo Kyiv",
+    "Association": "Ukraine",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Shk\u00EBndija": {
+    "Name": "Shk\u00EBndija",
+    "Association": "North Macedonia",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Ludogorets Razgrad": {
+    "Name": "Ludogorets Razgrad",
+    "Association": "Bulgaria",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Slovan Bratislava": {
+    "Name": "Slovan Bratislava",
+    "Association": "Slovakia",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Young Boys": {
+    "Name": "Young Boys",
+    "Association": "Switzerland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Aberdeen": {
+    "Name": "Aberdeen",
+    "Association": "Scotland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "FCSB": {
+    "Name": "FCSB",
+    "Association": "Romania",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Lech Poznan": {
+    "Name": "Lech Poznan",
+    "Association": "Romania",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Racing Genk": {
+    "Name": "Racing Genk",
+    "Association": "Belgium",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Lincoln Red Imps": {
+    "Name": "Lincoln Red Imps",
+    "Association": "Gibraltar",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Braga": {
+    "Name": "Braga",
+    "Association": "Portugal",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Zrinjski Mostar": {
+    "Name": "Zrinjski Mostar",
+    "Association": "Bosnia \u0026 Herzegovina",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Utrecht": {
+    "Name": "Utrecht",
+    "Association": "Netherlands",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Rijeka": {
+    "Name": "Rijeka",
+    "Association": "Croatia",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "PAOK Saloniki": {
+    "Name": "PAOK Saloniki",
+    "Association": "Greece",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "AS Roma": {
+    "Name": "AS Roma",
+    "Association": "Italy",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Bologna": {
+    "Name": "Bologna",
+    "Association": "Italy",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Porto": {
+    "Name": "Porto",
+    "Association": "Portugal",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Feyenoord": {
+    "Name": "Feyenoord",
+    "Association": "Netherlands",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Go Ahead Eagles": {
+    "Name": "Go Ahead Eagles",
+    "Association": "Netherlands",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "LOSC Lille": {
+    "Name": "LOSC Lille",
+    "Association": "France",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Olympique Lyon": {
+    "Name": "Olympique Lyon",
+    "Association": "France",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "OGC Nice": {
+    "Name": "OGC Nice",
+    "Association": "France",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Dinamo Zagreb": {
+    "Name": "Dinamo Zagreb",
+    "Association": "Croatia",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Real Betis": {
+    "Name": "Real Betis",
+    "Association": "Spain",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Celta de Vigo": {
+    "Name": "Celta de Vigo",
+    "Association": "Spain",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Red Bull Salzburg": {
+    "Name": "Red Bull Salzburg",
+    "Association": "Austria",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Aston Villa": {
+    "Name": "Aston Villa",
+    "Association": "England",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Nottingham Forest": {
+    "Name": "Nottingham Forest",
+    "Association": "England",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Viktoria Plzen": {
+    "Name": "Viktoria Plzen",
+    "Association": "Czechia",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Freiburg": {
+    "Name": "Freiburg",
+    "Association": "Germany",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Stuttgart": {
+    "Name": "Stuttgart",
+    "Association": "Germany",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Fenerbah\u00E7e": {
+    "Name": "Fenerbah\u00E7e",
+    "Association": "Turkye",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  }
+}
