@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="1100" d:DesignHeight="760"
+             mc:Ignorable="d" d:DesignWidth="1100" d:DesignHeight="790"
              x:Class="DrawSimulator.Views.TeamEditor">
 	<UserControl.Styles>
 		<StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
@@ -31,14 +31,14 @@
 				<Button Grid.Row="1" Grid.Column="0" Width="350" Height="40" Command="{Binding cmdAddAssociation}" Content="Add Association" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
 				<Button Grid.Row="1" Grid.Column="1" Width="350" Height="40" Command="{Binding cmdRemoveAssociation}" Content="Remove Association" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
 				<TextBlock Text="Available Associations" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
-				<ListBox Grid.Row="3" Grid.ColumnSpan="2" Width="675" Height="320" Margin="5" ItemsSource="{Binding AvailableAssociations}" SelectedItem="{Binding SelectedAssociation}"/>
+				<ListBox Grid.Row="3" Grid.ColumnSpan="2" Width="675" Height="270" Margin="5" ItemsSource="{Binding AvailableAssociations}" SelectedItem="{Binding SelectedAssociation}"/>
 			</Grid>
 		</Border>
 		
 		<Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.RowSpan="2">
 			<Grid Name="TeamsViewer" Margin="5" RowDefinitions="auto,auto,auto,auto">
 				<TextBlock Text="Available Teams" Grid.Row="0"/>
-				<DataGrid Width="350" Height="800" Grid.Row="1" Margin="5" ItemsSource="{Binding AvailableTeams}" SelectedItem="{Binding SelectedAvailableTeam}" AutoGenerateColumns="True" />
+				<DataGrid Width="350" Height="700" Grid.Row="1" Margin="5" ItemsSource="{Binding AvailableTeams}" SelectedItem="{Binding SelectedAvailableTeam}" AutoGenerateColumns="True" />
 				<Button Grid.Row="2" Width="350" Height="40" Command="{Binding cmdRemoveSelectedTeam}" Content="Remove Selected Team" FontSize="20" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
 			</Grid>
 		</Border>

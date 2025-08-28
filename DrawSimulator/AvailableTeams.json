@@ -1615,7 +1615,7 @@
   },
   "Lech Poznan": {
     "Name": "Lech Poznan",
-    "Association": "Romania",
+    "Association": "Poland",
     "ProhibitedTeams": [],
     "ProhibitedAssociations": [],
     "DrawnTeams": {},
@@ -1841,6 +1841,222 @@
   "Fenerbah\u00E7e": {
     "Name": "Fenerbah\u00E7e",
     "Association": "Turkye",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Sparta Prague": {
+    "Name": "Sparta Prague",
+    "Association": "Czechia",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Crystal Palace": {
+    "Name": "Crystal Palace",
+    "Association": "England",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Noah": {
+    "Name": "Noah",
+    "Association": "Armenia",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Rapid Wien": {
+    "Name": "Rapid Wien",
+    "Association": "Austria",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Hamrun Spartans": {
+    "Name": "Hamrun Spartans",
+    "Association": "Malta",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Lausanne-Sport": {
+    "Name": "Lausanne-Sport",
+    "Association": "Switzerland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Omonia": {
+    "Name": "Omonia",
+    "Association": "Cyprus",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "H\u00E4cken": {
+    "Name": "H\u00E4cken",
+    "Association": "Sweden",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Universitatea Craiova": {
+    "Name": "Universitatea Craiova",
+    "Association": "Romania",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Fiorentina": {
+    "Name": "Fiorentina",
+    "Association": "Italy",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Rak\u00F3w Czestochowa": {
+    "Name": "Rak\u00F3w Czestochowa",
+    "Association": "Poland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Celje": {
+    "Name": "Celje",
+    "Association": "Slovenia",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Strasbourg": {
+    "Name": "Strasbourg",
+    "Association": "France",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Rayo Vallecano": {
+    "Name": "Rayo Vallecano",
+    "Association": "Spain",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "AZ": {
+    "Name": "AZ",
+    "Association": "Netherlands",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "AEK Athene": {
+    "Name": "AEK Athene",
+    "Association": "Greece",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Drita": {
+    "Name": "Drita",
+    "Association": "Kosovo",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Jagiellonia Bialystok": {
+    "Name": "Jagiellonia Bialystok",
+    "Association": "Poland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Shelbourne": {
+    "Name": "Shelbourne",
+    "Association": "Ireland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Shamrock Rovers": {
+    "Name": "Shamrock Rovers",
+    "Association": "Ireland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Mainz 05": {
+    "Name": "Mainz 05",
+    "Association": "Germany",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Brei\u00F0ablik": {
+    "Name": "Brei\u00F0ablik",
+    "Association": "Iceland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Legia Warschau": {
+    "Name": "Legia Warschau",
+    "Association": "Poland",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Sjachtar Donetsk": {
+    "Name": "Sjachtar Donetsk",
+    "Association": "Ukraine",
     "ProhibitedTeams": [],
     "ProhibitedAssociations": [],
     "DrawnTeams": {},
