@@ -2062,5 +2062,122 @@
     "DrawnTeams": {},
     "DrawnAssociations": [],
     "DrawPots": {}
+  },
+  "Mexico": {
+    "Name": "Mexico",
+    "Association": "CONCACAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Canada": {
+    "Name": "Canada",
+    "Association": "CONCACAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Verenigde Staten": {
+    "Name": "Verenigde Staten",
+    "Association": "CONCACAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Argentini\u00EB": {
+    "Name": "Argentini\u00EB",
+    "Association": "CONMEBOL",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Brazili\u00EB": {
+    "Name": "Brazili\u00EB",
+    "Association": "CONMEBOL",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Ecuador": {
+    "Name": "Ecuador",
+    "Association": "CONMEBOL",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Japan": {
+    "Name": "Japan",
+    "Association": "AFC",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Iran": {
+    "Name": "Iran",
+    "Association": "AFC",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Zuid-Korea": {
+    "Name": "Zuid-Korea",
+    "Association": "AFC",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Australi\u00EB": {
+    "Name": "Australi\u00EB",
+    "Association": "AFC",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Oezbekistan": {
+    "Name": "Oezbekistan",
+    "Association": "AFC",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Jordani\u00EB": {
+    "Name": "Jordani\u00EB",
+    "Association": "AFC",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Nieuw-Zeeland": {
+    "Name": "Nieuw-Zeeland",
+    "Association": "OFC",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
   }
 }
