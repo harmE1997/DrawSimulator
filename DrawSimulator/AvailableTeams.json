@@ -2081,8 +2081,8 @@
     "DrawnAssociations": [],
     "DrawPots": {}
   },
-  "Verenigde Staten": {
-    "Name": "Verenigde Staten",
+  "United States": {
+    "Name": "United States",
     "Association": "CONCACAF",
     "ProhibitedTeams": [],
     "ProhibitedAssociations": [],
@@ -2090,8 +2090,8 @@
     "DrawnAssociations": [],
     "DrawPots": {}
   },
-  "Argentini\u00EB": {
-    "Name": "Argentini\u00EB",
+  "Argentina": {
+    "Name": "Argentina",
     "Association": "CONMEBOL",
     "ProhibitedTeams": [],
     "ProhibitedAssociations": [],
@@ -2099,8 +2099,8 @@
     "DrawnAssociations": [],
     "DrawPots": {}
   },
-  "Brazili\u00EB": {
-    "Name": "Brazili\u00EB",
+  "Brazil": {
+    "Name": "Brazil",
     "Association": "CONMEBOL",
     "ProhibitedTeams": [],
     "ProhibitedAssociations": [],
@@ -2135,8 +2135,8 @@
     "DrawnAssociations": [],
     "DrawPots": {}
   },
-  "Zuid-Korea": {
-    "Name": "Zuid-Korea",
+  "Qatar": {
+    "Name": "Qatar",
     "Association": "AFC",
     "ProhibitedTeams": [],
     "ProhibitedAssociations": [],
@@ -2144,8 +2144,8 @@
     "DrawnAssociations": [],
     "DrawPots": {}
   },
-  "Australi\u00EB": {
-    "Name": "Australi\u00EB",
+  "Australia": {
+    "Name": "Australia",
     "Association": "AFC",
     "ProhibitedTeams": [],
     "ProhibitedAssociations": [],
@@ -2153,8 +2153,8 @@
     "DrawnAssociations": [],
     "DrawPots": {}
   },
-  "Oezbekistan": {
-    "Name": "Oezbekistan",
+  "Uzbekistan": {
+    "Name": "Uzbekistan",
     "Association": "AFC",
     "ProhibitedTeams": [],
     "ProhibitedAssociations": [],
@@ -2162,8 +2162,8 @@
     "DrawnAssociations": [],
     "DrawPots": {}
   },
-  "Jordani\u00EB": {
-    "Name": "Jordani\u00EB",
+  "Jordan": {
+    "Name": "Jordan",
     "Association": "AFC",
     "ProhibitedTeams": [],
     "ProhibitedAssociations": [],
@@ -2171,11 +2171,336 @@
     "DrawnAssociations": [],
     "DrawPots": {}
   },
-  "Nieuw-Zeeland": {
-    "Name": "Nieuw-Zeeland",
+  "New-Zealand": {
+    "Name": "New-Zealand",
     "Association": "OFC",
     "ProhibitedTeams": [],
     "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Spain": {
+    "Name": "Spain",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "France": {
+    "Name": "France",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "England": {
+    "Name": "England",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Portugal": {
+    "Name": "Portugal",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Netherlands": {
+    "Name": "Netherlands",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Belgium": {
+    "Name": "Belgium",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [
+      "UEFA"
+    ],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Germany": {
+    "Name": "Germany",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Croatia": {
+    "Name": "Croatia",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Switzerland": {
+    "Name": "Switzerland",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Austria": {
+    "Name": "Austria",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Norway": {
+    "Name": "Norway",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Scotland": {
+    "Name": "Scotland",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Play-Off 1": {
+    "Name": "Play-Off 1",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Play-Off 2": {
+    "Name": "Play-Off 2",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Play-Off 3": {
+    "Name": "Play-Off 3",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Play-Off 4": {
+    "Name": "Play-Off 4",
+    "Association": "UEFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "South-Korea": {
+    "Name": "South-Korea",
+    "Association": "AFC",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Saudi-Arabia": {
+    "Name": "Saudi-Arabia",
+    "Association": "AFC",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Panama": {
+    "Name": "Panama",
+    "Association": "CONCACAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Curacao": {
+    "Name": "Curacao",
+    "Association": "CONCACAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Haiti": {
+    "Name": "Haiti",
+    "Association": "CONCACAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Paraguay": {
+    "Name": "Paraguay",
+    "Association": "CONMEBOL",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Columbia": {
+    "Name": "Columbia",
+    "Association": "CONMEBOL",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Uruguay": {
+    "Name": "Uruguay",
+    "Association": "CONMEBOL",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Morocco": {
+    "Name": "Morocco",
+    "Association": "CAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Senegal": {
+    "Name": "Senegal",
+    "Association": "CAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Egypt": {
+    "Name": "Egypt",
+    "Association": "CAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Algeria": {
+    "Name": "Algeria",
+    "Association": "CAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Tunesia": {
+    "Name": "Tunesia",
+    "Association": "CAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Ivory Coast": {
+    "Name": "Ivory Coast",
+    "Association": "CAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "South-Afrika": {
+    "Name": "South-Afrika",
+    "Association": "CAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Cape Verdia": {
+    "Name": "Cape Verdia",
+    "Association": "CAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Ghana": {
+    "Name": "Ghana",
+    "Association": "CAF",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Intercontinental Play-off 1": {
+    "Name": "Intercontinental Play-off 1",
+    "Association": "FIFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [
+      "CONCACAF",
+      "OFC",
+      "CAF"
+    ],
+    "DrawnTeams": {},
+    "DrawnAssociations": [],
+    "DrawPots": {}
+  },
+  "Intercontinental Play-off 2": {
+    "Name": "Intercontinental Play-off 2",
+    "Association": "FIFA",
+    "ProhibitedTeams": [],
+    "ProhibitedAssociations": [
+      "CONCACAF",
+      "AFC",
+      "CONMEBOL"
+    ],
     "DrawnTeams": {},
     "DrawnAssociations": [],
     "DrawPots": {}

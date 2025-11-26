@@ -203,6 +203,20 @@ namespace DrawSimulator
 
         private void AllocateTeam(string team, string drawnteam, int drawpotkey, int currentpotkey)
         {
+            //verify if there's not too many uefa teams in one poule. Reject if so.
+            var nruefas = TeamsInDraw[team].DrawnAssociations.Count(item => item == SpecialTreatAssociations.UEFA.ToString());
+            if (TeamsInDraw[team].Association == SpecialTreatAssociations.UEFA.ToString())
+                nruefas++;
+            if (TeamsInDraw[drawnteam].Association == SpecialTreatAssociations.UEFA.ToString() && nruefas == 2)
+                return;
+
+            nruefas = TeamsInDraw[drawnteam].DrawnAssociations.Count(item => item == SpecialTreatAssociations.UEFA.ToString());
+            if (TeamsInDraw[drawnteam].Association == SpecialTreatAssociations.UEFA.ToString())
+                nruefas++;
+            if (TeamsInDraw[team].Association == SpecialTreatAssociations.UEFA.ToString() && nruefas == 2)
+                return;
+
+
             //add drawn team to current team
             if (TeamsInDraw[team].DrawnTeams.ContainsKey(drawpotkey))
                 TeamsInDraw[team].DrawnTeams[drawpotkey].Add(drawnteam);
@@ -210,7 +224,7 @@ namespace DrawSimulator
                 TeamsInDraw[team].DrawnTeams.Add(drawpotkey, new List<string> { drawnteam });
             TeamsInDraw[team].DrawnAssociations.Add(TeamsInDraw[drawnteam].Association);
 
-            //add cuttent team to drawn team
+            //add current team to drawn team
             if (TeamsInDraw[drawnteam].DrawnTeams.ContainsKey(currentpotkey))
                 TeamsInDraw[drawnteam].DrawnTeams[currentpotkey].Add(team);
             else
@@ -256,6 +270,7 @@ namespace DrawSimulator
             {
                 if (classicdraw && GetPot(team.Key) > 1)
                     continue;
+
                 foreach (var pot in team.Value.DrawnTeams)
                 {
                     if (pot.Value.Count != nrTeamsPerPot)
@@ -264,6 +279,12 @@ namespace DrawSimulator
                             return false;
                     }
                 }
+
+                if (team.Value.DrawnAssociations.Count == 4)
+                    team.Value.DrawnAssociations.Remove(SpecialTreatAssociations.UEFA.ToString());
+                if (!team.Value.DrawnAssociations.Contains(SpecialTreatAssociations.UEFA.ToString())
+                    && team.Value.Association != SpecialTreatAssociations.UEFA.ToString())
+                    return false;
             }
 
             return true;

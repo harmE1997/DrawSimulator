@@ -3,6 +3,11 @@ using System.Linq;
 
 namespace DrawSimulator
 {
+    public enum SpecialTreatAssociations
+    {
+        UEFA
+    }
+
     public class Team
     {
         public string Name { get; set; }
@@ -32,7 +37,7 @@ namespace DrawSimulator
             if (team.Name == Name)
                 return false;
 
-            if (team.Association == Association)
+            if (team.Association == Association && Association != SpecialTreatAssociations.UEFA.ToString())
                 return false;
 
             if (ProhibitedTeams.Contains(team.Name))
@@ -47,7 +52,10 @@ namespace DrawSimulator
             if (DrawnTeams[pot].Contains(team.Name))
                 return false;
 
-            if (nrAssociationAppearances(team.Association) == 2)
+            if (team.Association == SpecialTreatAssociations.UEFA.ToString() && nrAssociationAppearances(team.Association) == 2)
+                return false;
+
+            if (team.Association != SpecialTreatAssociations.UEFA.ToString() && nrAssociationAppearances(team.Association) == 1)
                 return false;
 
             return true;
@@ -61,6 +69,10 @@ namespace DrawSimulator
                 if (a == association)
                     appearances++;
             }
+
+            if (Association == SpecialTreatAssociations.UEFA.ToString() && association == SpecialTreatAssociations.UEFA.ToString())
+                appearances++;
+
             return appearances;
         }
 
