@@ -16,7 +16,7 @@
 		<StyleInclude Source="avares://DrawSimulator/Styles/Default_Style.axaml"/>
 	</UserControl.Styles>
 	<TabControl TabStripPlacement="Left">
-		<TabItem Content="Home">
+		<TabItem >
 			<TabItem.Header>
 				<StackPanel Orientation="Vertical">
 					<PathIcon Data="M41.6594 21.4441L27.3204 6.5C26.4318 5.56711 25.1215 5 23.8483 5C22.5751 5 21.2648 5.56711 20.3763 6.5L6.17314 21C4.69993 22.5484 4.9387 24.9418 5.18103 25.5C5.35412 25.8976 5.97256 27 7.66118 27H9.64521V38C9.64521 40.619 11.7489 43 14.3991 43H18.5574C19.662 43 20.5574 42.1046 20.5574 41V31C20.5574 31 
